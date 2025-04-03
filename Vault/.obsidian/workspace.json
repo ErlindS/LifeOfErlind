@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ideen.md",
+                "file": "Bildung/Elektronik/Mikroelektronik/CMOS-Schaltungstechnik.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ideen"
+              "title": "CMOS-Schaltungstechnik"
             }
           },
           {
@@ -86,7 +86,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -182,8 +183,15 @@
   },
   "active": "3586b502c0488588",
   "lastOpenFiles": [
-    "Bildung/Git/Git.md",
+    "Pasted image 20250401121927.png",
+    "Bildung/Elevate/Different kind of Cs Projects.md",
+    "Bildung/Elektronik/Mikroelektronik/CMOS-Schaltungstechnik.md",
+    "Bildung/Elektronik/Mikroelektronik",
+    "Bildung/Elektronik",
+    "Bildung/Elevate/Maui.md",
     "Ideen.md",
+    "Bildung/Elevate",
+    "Bildung/Git/Git.md",
     "Bildung/StockGoStong/Acceptors Resolver Endpoints.md",
     "Bildung/Git",
     "2025-03-27.md",
@@ -203,9 +211,6 @@
     "Bildung/Games/Retrogame/GameConcept.md",
     "Bildung/Security/Overview of Security/CIA Triad.md",
     "Bildung/Games/Retrogame/Remember or Die.md",
-    "Bildung/Games/Retrogame",
-    "Bildung/Games",
-    "Bildung/Security/Overview of Security",
     "Bildung/StockGoStong/Callback vs Callout.md",
     "Rezepte/Mahlzeiten/Kartoffeln.md",
     "Rezepte/Mahlzeiten/Blumenkohl.md",
@@ -216,7 +221,6 @@
     "Rezepte/Mahlzeiten/TOFU.md",
     "Unternehmen/Gründung der GbR.md",
     "Unternehmen/Die Gesellschaft bürgerlichen Rechts (GbR).md",
-    "Welcome.md",
-    "Rezepte/Salate/Green Godess.md"
+    "Welcome.md"
   ]
 }
