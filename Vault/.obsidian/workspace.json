@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bildung/Python/Indizierung.md",
+                "file": "Bildung/Treiberentwicklung unter Linux.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Indizierung"
+              "title": "Treiberentwicklung unter Linux"
             }
           },
           {
@@ -182,10 +182,28 @@
   },
   "active": "3586b502c0488588",
   "lastOpenFiles": [
+    "Bildung/Vectrex/Debugging.md",
+    "Bildung/Treiberentwicklung unter Linux.md",
+    "Bildung/Vectrex/Performance.md",
+    "Bildung/Cs.md",
+    "Bildung/Autosar/AUTOSAR Software Integration Package/MICROSAR SIP.md",
+    "Bildung/Vectrex/Notes.md",
+    "Unternehmen/Steuerliche erfassung.md",
+    "Bildung/Vectrex",
+    "Unternehmen/Die Gesellschaft bürgerlichen Rechts (GbR).md",
+    "Bildung/Semesterplan.md",
+    "Pasted image 20250407134052.png",
+    "Bildung/Python/Funktionen.md",
+    "Bildung/Autosar/AUTOSAR Software Integration Package",
+    "Bildung/Autosar",
+    "Bildung/Python/Folien/04_Objektorientierung.pdf",
+    "Bildung/Python/Folien/04_Objektorientierung.pdf.crdownload",
+    "Bildung/Python/Iterator & Range.md",
+    "Bildung/Python/Folien/03_Module_Funktionen_Decorators.pdf",
+    "Bildung/Python/Folien/03_Module_Funktionen_Decorators.pdf.crdownload",
     "Bildung/Python/Operatoren.md",
     "Bildung/Python/Indizierung.md",
     "Bildung/Python/Datentypen.md",
-    "Bildung/Python/Iterator & Range.md",
     "2025-04-03.md",
     "Pasted image 20250323181703.png",
     "Pasted image 20250327000755.png",
@@ -199,28 +217,11 @@
     "Bildung/Elevate",
     "Bildung/Git/Git.md",
     "Bildung/StockGoStong/Acceptors Resolver Endpoints.md",
-    "Bildung/Git",
     "2025-03-27.md",
     "Untitled.canvas",
     "Bildung/Not Sorted/x86 Architecture Overview.md",
     "Musik/Gitarre/Überblick.md",
-    "Bildung/Not Sorted",
-    "Bildung/C sharp",
-    "Bildung/C++ Templates",
     "Rezepte/Nachspeisen/Überblick.md",
-    "Musik/Gitarre",
-    "Gedichte/test.md",
-    "Rezepte/Nachspeisen",
-    "Musik",
-    "Bildung/Games/Retrogame/GameConcept.md",
-    "Bildung/Security/Overview of Security/CIA Triad.md",
-    "Bildung/Games/Retrogame/Remember or Die.md",
-    "Bildung/StockGoStong/Callback vs Callout.md",
-    "Rezepte/Mahlzeiten/Kartoffeln.md",
-    "Rezepte/Mahlzeiten/Blumenkohl.md",
-    "Rezepte/Vorspeisen.md",
-    "create a link.md",
-    "Untitled.md",
-    "Rezepte/Überblick.md"
+    "Gedichte/test.md"
   ]
 }
