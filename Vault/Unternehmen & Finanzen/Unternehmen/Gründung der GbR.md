@@ -1,5 +1,5 @@
 Checkliste für die Gründung einer GbR
-- [ ] Beim Gewerbeamt anmelden
+- [x] Beim Gewerbeamt anmelden
 - [ ] Finanzamt anmelden
 - [ ] IHK registrieren
 - [ ] Berufsgenossenschaften anmelden
