@@ -8,29 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3586b502c0488588",
+            "id": "aaad48ef96d5f09e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bildung/Treiberentwicklung unter Linux.md",
+                "file": "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/Overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Treiberentwicklung unter Linux"
-            }
-          },
-          {
-            "id": "392ea7ec6dbc32b0",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Pasted image 20250323181703.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250323181703"
+              "title": "Overview"
             }
           }
         ]
@@ -90,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 313.5,
+    "collapsed": true
   },
   "right": {
     "id": "775cda7c62425f1d",
@@ -180,48 +169,49 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3586b502c0488588",
+  "active": "aaad48ef96d5f09e",
   "lastOpenFiles": [
-    "Bildung/Vectrex/Debugging.md",
-    "Bildung/Treiberentwicklung unter Linux.md",
-    "Bildung/Vectrex/Performance.md",
-    "Bildung/Cs.md",
-    "Bildung/Autosar/AUTOSAR Software Integration Package/MICROSAR SIP.md",
-    "Bildung/Vectrex/Notes.md",
-    "Unternehmen/Steuerliche erfassung.md",
-    "Bildung/Vectrex",
-    "Unternehmen/Die Gesellschaft bürgerlichen Rechts (GbR).md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/Overview.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARRuntimeEnvironment/AUTOSAR Runtime Environment.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARApplication/Runnables.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARRuntimeEnvironment",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARApplication/Summary.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARApplication/Ports.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARApplication/SoftwareComponents.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARApplication/Overview.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARApplication/QuickReference.md",
+    "Unternehmen/Finanzen/BeispielKonten.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/Untitled.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARApplication",
+    "Bildung/Autosar/Untitled.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction",
+    "Unternehmen/Finanzen/Kontoeröffnung.md",
+    "Bildung/TreiberentwicklungUnterLinux/TEL-SS25-Kapitel1.pdf",
     "Bildung/Semesterplan.md",
-    "Pasted image 20250407134052.png",
-    "Bildung/Python/Funktionen.md",
-    "Bildung/Autosar/AUTOSAR Software Integration Package",
-    "Bildung/Autosar",
-    "Bildung/Python/Folien/04_Objektorientierung.pdf",
-    "Bildung/Python/Folien/04_Objektorientierung.pdf.crdownload",
-    "Bildung/Python/Iterator & Range.md",
-    "Bildung/Python/Folien/03_Module_Funktionen_Decorators.pdf",
-    "Bildung/Python/Folien/03_Module_Funktionen_Decorators.pdf.crdownload",
-    "Bildung/Python/Operatoren.md",
-    "Bildung/Python/Indizierung.md",
-    "Bildung/Python/Datentypen.md",
-    "2025-04-03.md",
+    "Bildung/TreiberentwicklungUnterLinux/TEL-SSS25-Kapitel2.pdf",
+    "Bildung/TreiberentwicklungUnterLinux/TEL-SSS25-Kapitel2.pdf.crdownload",
+    "Bildung/TreiberentwicklungUnterLinux/TEL-SS25-Kapitel1.pdf.crdownload",
+    "Bildung/TreiberentwicklungUnterLinux",
+    "Bildung/PuzzleBasedLearning/Untitled.md",
+    "Bildung/PuzzleBasedLearning",
+    "Unternehmen/Finanzen/UnterschiedlicheSteuerarten.md",
+    "Unternehmen/Theorie/KleinunternehmensRegelung.md",
+    "Unternehmen/Gründung der GbR.md",
+    "Unternehmen/Untitled.md",
+    "Unternehmen/Theorie/Steuerliche erfassung.md",
+    "Welcome.md",
+    "create a link.md",
+    "Rezepte/Überblick.md",
+    "Bildung/Git/Git.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/OverviewOfVectorMICROSARClassicOperatingSystem.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Summary & Requirements.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Scalability of the Os.md",
     "Pasted image 20250323181703.png",
     "Pasted image 20250327000755.png",
-    "Bildung/Elektronik/Mikroelektronik/CMOS-Schaltungstechnik.md",
     "Pasted image 20250401121927.png",
-    "Bildung/Elevate/Different kind of Cs Projects.md",
-    "Bildung/Elektronik/Mikroelektronik",
-    "Bildung/Elektronik",
-    "Bildung/Elevate/Maui.md",
-    "Ideen.md",
-    "Bildung/Elevate",
-    "Bildung/Git/Git.md",
-    "Bildung/StockGoStong/Acceptors Resolver Endpoints.md",
-    "2025-03-27.md",
-    "Untitled.canvas",
-    "Bildung/Not Sorted/x86 Architecture Overview.md",
-    "Musik/Gitarre/Überblick.md",
-    "Rezepte/Nachspeisen/Überblick.md",
-    "Gedichte/test.md"
+    "Pasted image 20250407134052.png",
+    "Pasted image 20250418214057.png",
+    "Untitled.canvas"
   ]
 }

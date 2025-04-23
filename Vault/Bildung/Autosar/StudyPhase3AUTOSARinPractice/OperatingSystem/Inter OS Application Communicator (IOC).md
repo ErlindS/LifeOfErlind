@@ -1,0 +1,5 @@
+An Os Application in AUTOSAR is a specific software part that operates within the AUTOSAR Os environment. It consists of tasks that perform specific operations, manages shared resources and communicates with other applications. Each application is configured with settings like task priorities and resource allocations. Os Applications promote modularity, reusability and easier development of automotive software.
+
+The IOC in AUTOSAR is a communication mechanism that allows tasks from different applications to exchange data and synchronize their operations. It uses communication channels or ports as interfaces for data exchange. Tasks can send and receive data through these channels using dedicated functions provided by the AUTOSAR Os. IOC also provides synchronization, buffering and resource protection mechanisms to ensure data integrity, coordination and safe access to shared resources.
+
+Here from one Os Application on the left side data is exchanged to another Os Application on the right side. With the provided functions this is done in a similar way as the Rte_Write/Read (unqueued) and Rte_Send/Receive (queued) funcionalities.
