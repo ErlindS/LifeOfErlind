@@ -80,3 +80,20 @@ Notes:
 
 Portierbarkeit
 
+
+Ziel: Grundlage schaffen für wartbare Entwicklung  
++ Git-Projekt professionell aufsetzen (Branch-Strategie, Naming Conventions, README, Labels, CI/CD-Einrichtung)
++ Analyse: Wie strukturieren professionelle Entwickler Git-Repositories?
++ Evaluierung & Einrichtung einer geeigneten Entwicklungsumgebung
++ Infrastruktur schaffen für wartbare Entwicklung
+
+Ziel: API und deren Umsetzung
++ Recherche: Merkmale einer guten API
++ API im System implementieren
+
+Ziel: Dokumentation
++ Erstellung einer sinnvollen, verständlichen Projektdokumentation in GitLab (inkl. Setup-Anleitung, API-Doku) 
++ Theoretische Konzepte (warum wir was gemacht haben) in ein extra Dokument schreiben
++ Vorbereitung und Ausarbeitung der Abschlusspräsentation
+
+Entwicklung und Charakterisierung eines wartbaren embedded SDN-Systems mit einer eigen implementierten API. 
