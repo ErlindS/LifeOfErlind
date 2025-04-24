@@ -10,5 +10,10 @@ Tortillas
 Milchreis
 Eierrezepte / Strammer Max
 
+Mahlzeiten sollten einen mit Kcal stopfen, bitte Beachte:
+[[Blumenkohl]]
+[[Kartoffeln]]
+[[TOFU]]
 
-Für unterschiedliche Salatrezepte bitte beachte [[Green Godess]]
+Für unterschiedliche Salatrezepte bitte beachte den Salat-Ordner
+[[Green Godess]]

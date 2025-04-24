@@ -1,0 +1,1 @@
+In AUTOSAR Os, the concept of scalability classes is introduced to provide flexibility and adaptability to different system configurations and requirements. Scalability classes define a set of features, services and configurations for the AUTOSAR Os. They allow the Os to be tailored to specific needs while maintaining compatibility and interoperability across different platforms.

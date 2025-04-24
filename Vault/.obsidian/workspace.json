@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Gedichte/test.md",
+                "file": "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/Summary.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "test"
+              "title": "Summary"
+            }
+          },
+          {
+            "id": "db88ccb8441eade5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Unternehmen/Finanzen/BeispielKonten.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "BeispielKonten"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -168,46 +183,49 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "02ad102b5694a062",
+  "active": "db88ccb8441eade5",
   "lastOpenFiles": [
-    "create a link.md",
-    "Untitled.md",
-    "Unternehmen/Gründung der GbR.md",
-    "Unternehmen/Gewerbe-Anmeldung.pdf",
-    "Unternehmen/Gewerbe-Anmeldung-Neu.pdf",
-    "Unternehmen/Die Gesellschaft bürgerlichen Rechts (GbR).md",
-    "Unternehmen",
-    "Ideen.md",
-    "2025-04-03.md",
-    "Bildung/Tutorium.md",
+    "Unternehmen/Finanzen/Kontoeröffnung.md",
     "Bildung/Projektarbeit/Notes.md",
-    "Unternehmen & Finanzen/Steuern/Untitled.md",
-    "Daily Notes/2025-04-03.md",
-    "Daily Notes",
-    "Bildung/Ideen.md",
-    "Welcome.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/DioDriver.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/Summary.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/ClientServerPorts.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/Port Driver.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/IODriversGeneralCharacteristics.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/Overview.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/Overview.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput",
+    "Gedichte/test.md",
+    "Unternehmen/Theorie/Steuerliche erfassung.md",
+    "Unternehmen/Theorie/KleinunternehmensRegelung.md",
+    "Unternehmen/Theorie/Die Gesellschaft bürgerlichen Rechts (GbR).md",
+    "Unternehmen/Finanzen/UnterschiedlicheSteuerarten.md",
+    "Unternehmen/Finanzen/BeispielKonten.md",
+    "Unternehmen/Buerokratie/Gewerbe-Anmeldung.pdf",
+    "Unternehmen/Buerokratie/Gewerbe-Anmeldung-Neu.pdf",
+    "Unternehmen/Theorie",
+    "Unternehmen/Finanzen",
+    "Unternehmen/Buerokratie",
+    "Unternehmen",
+    "Pasted image 20250418214057.png",
+    "Pasted image 20250407134052.png",
+    "Bildung/Vectrex/Performance.md",
+    "Bildung/Vectrex/Notes.md",
+    "Bildung/Vectrex/Debugging.md",
+    "Bildung/TreiberentwicklungUnterLinux/TEL-SSS25-Kapitel2.pdf",
+    "Bildung/TreiberentwicklungUnterLinux/TEL-SS25-Kapitel1.pdf",
+    "Bildung/TreiberentwicklungUnterLinux/deskMate Quickstart for Vector Remote Exercises_CP.pdf",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Tasks.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Scalability of the Os.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Summary & Requirements.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/OverviewOfVectorMICROSARClassicOperatingSystem.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Os Counter.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Os Resources.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Interrupts.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Inter OS Application Communicator (IOC).md",
     "Untitled.canvas",
-    "Rezepte/Mahlzeiten/Kartoffeln.md",
     "Pasted image 20250401121927.png",
     "Pasted image 20250327000755.png",
-    "Pasted image 20250323181703.png",
-    "Unternehmen & Finanzen/Unternehmen/Gründung der GbR.md",
-    "Unternehmen & Finanzen/Unternehmen/Gewerbe-Anmeldung-Neu.pdf",
-    "Unternehmen & Finanzen/Unternehmen/Gewerbe-Anmeldung.pdf",
-    "Unternehmen & Finanzen/Unternehmen/Die Gesellschaft bürgerlichen Rechts (GbR).md",
-    "Unternehmen & Finanzen/Unternehmen",
-    "Unternehmen & Finanzen/Steuern",
-    "2025-04-02.md",
-    "Rezepte/Salate/Okroschka.md",
-    "Rezepte/Salate/Green Godess.md",
-    "Rezepte/Nachspeisen/Überblick.md",
-    "Rezepte/Mahlzeiten/TOFU.md",
-    "Rezepte/Mahlzeiten/Blumenkohl.md",
-    "Bildung/Python/Folien/05_Python_Numpy1.pdf",
-    "Bildung/Fuzzer/Fuzzing.md",
-    "Musik/Alben/Soul über Ego.md",
-    "Bildung/Python/Folien/06_Python_Numpy2.pdf",
-    "Bildung/Python/Numpy.md",
-    "Bildung/Python/Datentypen.md"
+    "Pasted image 20250323181703.png"
   ]
 }

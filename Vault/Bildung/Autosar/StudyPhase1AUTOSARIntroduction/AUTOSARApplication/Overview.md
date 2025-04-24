@@ -1,0 +1,2 @@
+At the highest level of abstraction, the AUTOSAR architecture distinguishes between three software layers:
+Application, Runtime Environment, Basic Software which run on a Microcontroller. Now this directory will focus on the application layer.
