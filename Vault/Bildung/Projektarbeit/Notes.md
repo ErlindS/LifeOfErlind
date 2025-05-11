@@ -10,7 +10,7 @@
 - (P4)
 
 
-Projektname: Charakterisierung einer wartbaren embedded SDN-Systems mit passender Architektur 
+Projektname: Charakterisierung eines wartbaren embedded SDN-Systems mit passender Architektur 
 
 
 mit einer eigen implementierten API. 
@@ -97,3 +97,19 @@ Ziel: Dokumentation
 + Vorbereitung und Ausarbeitung der Abschlusspräsentation
 
 Entwicklung und Charakterisierung eines wartbaren embedded SDN-Systems mit einer eigen implementierten API. 
+
+
+
+Struktur anhand der Use case
+
+vergleich und das Beispiel durchspielen
+
+Projektorganisation im OneNote
+
+05.05.2025
+Git-Projektstruktur bis nächstes mal
+
+Anleitungen und installationsdateien an einem Ort und unter Git
+
+Weekly was soll präsentiert werden. 
+

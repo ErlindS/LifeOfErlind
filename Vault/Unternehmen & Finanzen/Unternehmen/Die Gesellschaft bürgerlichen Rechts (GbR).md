@@ -17,3 +17,13 @@ Für die Gründung der spezifischen GbR siehe [[Gründung der GbR]]
 
 
 Source: https://www.firma.de/firmengruendung/was-heisst-gbr-definition-und-bedeutung/
+
+**Deshalb ist die Reihenfolge normalerweise so:**
+
+1. **GbR-Vertrag** erstellen (formlos möglich, aber besser schriftlich).
+    
+2. **Fragebogen zur steuerlichen Erfassung** beim Finanzamt ausfüllen und abschicken (online möglich über "Mein ELSTER").
+    
+3. **Steuernummer abwarten**.
+    
+4. Mit **Steuernummer** zur Bank gehen und **Geschäftskonto eröffnen**.
