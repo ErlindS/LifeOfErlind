@@ -1,6 +1,6 @@
 import genanki
 
-def erstelle_anki_karten(karten_liste, deck_name="Mein Deck", deck_id=1234567890):
+def erstelle_anki_karten(karten_liste, deck_name="Tensorflow1", deck_id=1234567890):
     # Erstelle ein neues Deck
     mein_deck = genanki.Deck(
         deck_id,
@@ -36,7 +36,7 @@ def erstelle_anki_karten(karten_liste, deck_name="Mein Deck", deck_id=1234567890
     print(f"Deck '{deck_name}.apkg' wurde erfolgreich erstellt!")
 
 # Beispiel-Input
-cards = [
+cards2 = [
   ['Wer begann 1991 mit der Entwicklung von Linux?', 'Linus Torvalds. [Source 1]'],
   ['Auf welcher Grundlage entwickelte Linus Torvalds Linux?', 'Auf dem MINIX-Clone (Unix-Derivat) von Tannenbaum. [Source 2]'],
   ['Welche Lizenz verwendete Torvalds für Linux?', 'Die GNU General Public Licence (GPL), was die freie Nutzung ermöglichte. [Source 1]'],
@@ -111,8 +111,27 @@ cards = [
   ['Kann der Kernel im Interruptkontext auf den Userspace zugreifen?', 'Nein, im Interruptkontext gibt es keinen Bezug zu einem bestimmten Prozess und dessen Adressraum. [Source 214, 239]']
 ]
 
+cards = [
+  ["Was ist ein Tensor in TensorFlow?", "Ein Tensor ist eine mehrdimensionale Datenstruktur, die in TensorFlow verwendet wird. Man kann ihn sich als einen mehrdimensionalen Array vorstellen, der einen einheitlichen Datentyp (dtype) hat. Ein Tensor kann 0 Dimensionen (Skalar), 1 Dimension (Vektor), 2 Dimensionen (Matrix) oder mehr haben."],
+  ["Wie erstellt man einen nicht veränderbaren (konstanten) Tensor in TensorFlow und was sind seine Eigenschaften?", "Einen konstanten Tensor erstellt man mit `tf.constant()`. Dieser Tensor kann nach seiner Erstellung nicht mehr modifiziert werden. Wichtige Parameter bei der Erstellung sind der Wert (`value`), der Datentyp (`dtype`) und die Form (`shape`)."],
+  ["Erkläre die Tensor-Dimensionen: Skalar, Vektor, Matrix.", "Ein **Skalar** ist ein Tensor der Dimension 0 (eine einzelne Zahl).\nEin **Vektor** ist ein Tensor der Dimension 1 (ein Array von Zahlen).\nEine **Matrix** ist ein Tensor der Dimension 2 (ein zweidimensionaler Array).\nGenerell ist ein Tensor ein n-dimensionaler Array."],
+  ["Was gibt der Parameter `dtype` bei TensorFlow-Tensoren an?", "Der Parameter `dtype` (Datentyp) spezifiziert den Typ der Daten, die im Tensor enthalten sind. Beispiele hierfür sind `tf.float32` für 32-Bit-Gleitkommazahlen oder `tf.int32` für 32-Bit-Integer. TensorFlow unterstützt verschiedene Datentypen, die mit `tf.dtypes.DType` eingesehen werden können."],
+  ["Was definiert der Parameter `shape` bei TensorFlow-Tensoren?", "Der Parameter `shape` definiert die Anzahl und Größe der Dimensionen des Tensors. Zum Beispiel bedeutet `shape=(2, 2)`, dass der Tensor zwei Dimensionen hat, jede mit der Größe 2. `shape=(1,1,4)` bedeutet drei Dimensionen mit den Größen 1, 1 und 4. Die Form kann auch dazu dienen, die Eingabedaten zu validieren und die Berechnungen im Graph zu optimieren."],
+  ["Wie erstellt man einen veränderbaren Tensor in TensorFlow und wie kann dessen Inhalt geändert werden?", "Einen veränderbaren Tensor erstellt man mit `tf.Variable()`, wobei ein initialer Wert angegeben werden muss. Der Inhalt eines `tf.Variable` kann mit der Methode `assign()` geändert werden. Dies ist ein Hauptunterschied zu `tf.constant`, dessen Werte nicht änderbar sind."],
+  ["Was ist der Zweck der `assign()` Methode für `tf.Variable`?", "Die Methode `assign()` wird verwendet, um einem `tf.Variable` neue Werte zuzuweisen, ohne ein neues Tensor-Objekt zu erstellen. Dies ist nützlich in Szenarien wie dem maschinellen Lernen, wo Gewichte oder Parameter während des Trainingsprozesses aktualisiert werden müssen."],
+  ["Wie kann man in TensorFlow Tensoren mit zufälligen Werten aus einer Normalverteilung erstellen?", "Man kann `tf.random.normal()` verwenden. Diese Funktion erstellt einen Tensor mit der angegebenen Form (`shape`), gefüllt mit Werten aus einer Normalverteilung. Man kann den Mittelwert (`mean`) und die Standardabweichung (`stddev`) der Verteilung spezifizieren."],
+  ["Wozu dient `tf.random.Generator.from_seed()` in TensorFlow?", "`tf.random.Generator.from_seed()` erstellt einen Zufallszahlengenerator, der mit einem bestimmten Seed initialisiert wird. Dies stellt sicher, dass die generierten Zufallszahlen reproduzierbar sind, wenn derselbe Seed verwendet wird. Dieser Generator kann dann Methoden wie `normal()` oder `uniform()` aufrufen."],
+  ["Wie funktioniert die Methode `random.normal()` eines TensorFlow-Zufallszahlengenerators?", "Die Methode `random.normal()` (aufgerufen auf einem `tf.random.Generator` Objekt) generiert einen Tensor mit Werten, die aus einer Normalverteilung (Gaußschen Verteilung) mit einem spezifizierbaren Mittelwert und einer Standardabweichung gezogen werden. Die Form des Tensors wird ebenfalls als Parameter übergeben."],
+  ["Wie funktioniert die Methode `random.uniform()` eines TensorFlow-Zufallszahlengenerators?", "Die Methode `random.uniform()` (aufgerufen auf einem `tf.random.Generator` Objekt) generiert einen Tensor mit Werten, die aus einer Gleichverteilung über ein spezifiziertes Intervall [minval, maxval) gezogen werden. Die Form des Tensors und optional der Datentyp können ebenfalls angegeben werden."],
+  ["Was bewirkt `tf.random.shuffle()` in TensorFlow und welche Rolle spielt der Seed?", "`tf.random.shuffle()` mischt einen Tensor zufällig entlang seiner ersten Dimension. Wenn ein `seed` (Seed-Wert) angegeben wird, führt das Mischen bei wiederholter Ausführung mit demselben Tensor und demselben Seed immer zum selben Ergebnis, was für Reproduzierbarkeit wichtig ist."],
+  ["Erkläre den Unterschied zwischen globalen und operationalen Seeds in TensorFlow.", "**Globaler Seed:** Wird mit `tf.random.set_seed()` gesetzt und beeinflusst alle nachfolgenden Zufallsoperationen in TensorFlow. Er hilft, die Ergebnisse über mehrere Programmläufe hinweg reproduzierbar zu machen.\n**Operationaler Seed:** Wird direkt als Parameter an eine spezifische Zufallsoperation übergeben (z.B. `tf.random.uniform(..., seed=42)`). Er steuert die Zufälligkeit nur für diese spezielle Operation. Wenn sowohl ein globaler als auch ein operationaler Seed gesetzt sind, werden beide kombiniert, um die Zufallszahlen zu generieren, wobei dies die beste Methode für reproduzierbare Zufälligkeit ist."],
+  ["Wie erstellt man mit TensorFlow Tensoren, die nur Einsen (`tf.ones()`), nur Nullen (`tf.zeros()`) oder eine Identitätsmatrix (`tf.eye()`) enthalten?", "`tf.ones(shape, dtype=tf.float32)`: Erstellt einen Tensor mit der angegebenen Form (`shape`), bei dem alle Elemente 1 sind.\n`tf.zeros(shape, dtype=tf.float32)`: Erstellt einen Tensor mit der angegebenen Form (`shape`), bei dem alle Elemente 0 sind.\n`tf.eye(num_rows, num_columns=None, batch_shape=None, dtype=tf.float32)`: Erstellt eine Identitätsmatrix (oder einen Batch von Identitätsmatrizen). Die Diagonalelemente sind 1, alle anderen 0."],
+  ["Welche wichtigen Attribute hat ein Tensor in TensorFlow und wie greift man darauf zu?", "Wichtige Attribute eines Tensors sind:\n- `tensor.shape`: Gibt die Form (Dimensionen) des Tensors als `tf.TensorShape` zurück.\n- `tensor.ndim`: Gibt die Anzahl der Dimensionen (Rang) des Tensors als Integer zurück.\n- `tf.size(tensor)`: Gibt die Gesamtzahl der Elemente im Tensor als `tf.Tensor` zurück.\n- `tensor.dtype`: Gibt den Datentyp der Elemente im Tensor als `tf.DType` zurück."],
+  ["Wie funktioniert das Indexieren und Slicing von Tensoren in TensorFlow?", "Ähnlich wie bei Python-Listen oder NumPy-Arrays kann man auf Elemente oder Bereiche (Slices) eines Tensors zugreifen. Die Syntax ist typischerweise `tensor[start:stop:step]`.\n- `start`: Der Startindex des Slice (inklusiv).\n- `stop`: Der Endindex des Slice (exklusiv).\n- `step`: Die Schrittweite.\nNegative Indizes zählen vom Ende des Tensors. TensorFlow bietet auch spezialisierte Operationen wie `tf.slice`, `tf.gather` für komplexere Indexierungsaufgaben."]
+]
+
 # Du kannst diese Liste nun kopieren. Jede Karte ist jetzt eine Liste mit zwei Elementen:
 # dem Text für die Vorderseite und dem Text für die Rückseite.
 # print(cards) # Optional: Zum Anzeigen der Karten
 
-erstelle_anki_karten(cards, "Allgemeinwissen")
+erstelle_anki_karten(cards, "Tensorflow1")

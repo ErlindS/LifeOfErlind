@@ -15,4 +15,12 @@ In the directory build/rel compare rst files for better performances
 
 For real comparision just take a peak at "VIDE"
 
+06.05.2025
+Played 40 min games
+
+gcc 4.3.6 
+Labels as values -> Sprungtabelle
+Funktionszeiger
+
+
 
