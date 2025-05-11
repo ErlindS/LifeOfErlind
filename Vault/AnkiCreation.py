@@ -35,84 +35,345 @@ def erstelle_anki_karten(karten_liste, deck_name="Mein Deck", deck_id=1234567890
     genanki.Package(mein_deck).write_to_file(f'{deck_name}.apkg')
     print(f"Deck '{deck_name}.apkg' wurde erfolgreich erstellt!")
 
-# Beispiel-Input
 cards = [
-  ['Wer begann 1991 mit der Entwicklung von Linux?', 'Linus Torvalds. [Source 1]'],
-  ['Auf welcher Grundlage entwickelte Linus Torvalds Linux?', 'Auf dem MINIX-Clone (Unix-Derivat) von Tannenbaum. [Source 2]'],
-  ['Welche Lizenz verwendete Torvalds für Linux?', 'Die GNU General Public Licence (GPL), was die freie Nutzung ermöglichte. [Source 1]'],
-  ['In welcher Programmiersprache ist Linux hauptsächlich entwickelt?', 'In C, ähnlich wie Unix. [Source 3]'],
-  ['Nach welchem Standard ist Linux zertifiziert?', 'POSIX 1003.1a. [Source 3]'],
-  ['Welche weiteren Unix-Systemaufrufe realisiert Linux?', 'Systemaufrufe von SVID Rel. 4 und BSD-Unix. [Source 4]'],
-  ['Was sind Linux-Distributionen?', 'Verschiedene Zusammenstellungen von Software, die auf dem Linux-Kernel aufsetzen (z.B. Debian, RedHat, SUSE, Ubuntu, Android). [Source 5, 6]'],
-  ['Was ist die primäre Aufgabe eines Betriebssystems?', 'Die Abstraktion der Hardware, sodass Anwendungsprogrammierer keine direkten Hardware-Kenntnisse benötigen. [Source 8]'],
-  ['Was ist der Unterschied zwischen "Bare-metal" und "OS-based" Systemen?', 'Bare-metal: Anwendung läuft direkt auf der Hardware. OS-based: Ein Betriebssystem abstrahiert die Hardware für die Anwendung. [Source 10]'],
-  ['Welche Hauptkomponenten gehören zur Architektur eines typischen Betriebssystems?', 'Kernel (mit Prozess-, Speicher-, I/O-Management, Gerätetreibern), Systemcall-Interface, Service-Bibliotheken und Applikationen im Userland. [Source 10]'],
-  ['Was implementiert das Systemcall-Interface?', 'Die API-Funktionen (Systemcalls), die den Übergang von Anwendungen in den Kernel ermöglichen. [Source 11]'],
-  ['Wie greift eine Applikation auf Hardware-Ressourcen zu?', 'Über Systemcalls (Systemaufrufe), die vom Betriebssystem bereitgestellt werden. [Source 12]'],
-  ['Was ist der Unterschied zwischen User-Modus und Kernel-Modus?', 'Kernel-Modus: privilegierter Modus mit vollem Zugriff. User-Modus: nicht-privilegierter Modus mit Einschränkungen. [Source 14]'],
-  ['Welche Einschränkungen gelten typischerweise im User-Modus?', 'Bestimmte Prozessorbefehle sind nicht verfügbar und es ist nur ein Teil des Adressraums zugänglich (gesteuert durch MMU-Seitentabellen). [Source 15, 16]'],
-  ['Was ist ein Prozess (Task)?', 'Die Ablaufumgebung eines Programms, die vom Betriebssystem bereitgestellt wird; ein Programm zur Laufzeit. [Source 18, 20]'],
-  ['Was versteht man unter dem Prozess-Kontext?', 'Alle Informationen, die den Zustand eines Prozesses beschreiben (Programmcode, Daten, Stack, Registerinhalte/Hardware-Kontext, geöffnete Dateien etc.). [Source 22]'],
-  ['Was passiert bei einem Kontextwechsel (Context Switching)?', 'Der Hardware-Kontext (Register etc.) des aktuellen Prozesses wird gesichert und der des nächsten Prozesses wird geladen. [Source 23]'],
-  ['In welche Segmente wird der Adressraum eines Prozesses typischerweise unterteilt?', 'Codesegment (Programm), Stacksegment (lokale Variablen, Rücksprungadressen), Datensegment (globale/statische Variablen), Heap (dynamisch allokierter Speicher). [Source 24, 25]'],
-  ['Was ist ein Prozesskontrollblock (PCB oder TCB)?', 'Ein Eintrag in der Prozesstabelle des Betriebssystems, der alle wichtigen Verwaltungsinformationen über einen Prozess enthält. [Source 28]'],
-  ['Welche Informationen enthält ein PCB typischerweise?', 'Informationen über Code-, Daten-, Stacksegment, Speicherort des Kontexts, Prozesszustand, Priorität, Prozess-ID (PID), Eltern-Prozess-ID (PPID). [Source 29, 30, 31]'],
-  ['Welche besondere Rolle spielt der Prozess mit PID 1 unter Unix/Linux?', 'Es ist der Init-Prozess, der vom Kernel nach dem Booten gestartet wird und der (direkte oder indirekte) Elternprozess aller anderen Prozesse ist. [Source 32, 33]'],
-  ['Was sind Threads (Leichtgewichtige Prozesse / LWP)?', 'Ausführungsfäden innerhalb eines Prozesses, die sich Ressourcen wie den Adressraum teilen, aber einen eigenen Ausführungskontext (inkl. Stack) haben. [Source 36, 37, 38, 39]'],
-  ['Was teilen sich Threads desselben Prozesses?', 'Den Adressraum (Code-, Daten-, Heap-Segment), offene Dateien und Netzwerkverbindungen. [Source 37]'],
-  ['Was hat jeder Thread eines Prozesses eigenständig?', 'Ein eigenes Stacksegment und einen eigenen Threadkontext (inkl. CPU-Register). [Source 38, 39]'],
-  ['Was sind die drei grundlegenden Zustände eines Prozesses im Prozesslebenszyklus?', 'Aktiv (laufend), Bereit (lauffähig, wartet auf CPU), Blockiert (wartet auf ein Ereignis, z.B. I/O). [Source 46]'],
-  ['Welche Unterscheidung gibt es beim Zustand "Blockiert" (Schlafen) in Linux?', 'Unterbrechbar (TASK_INTERRUPTIBLE) und nicht-unterbrechbar (TASK_UNINTERRUPTIBLE). [Source 48]'],
-  ['Was bedeutet Nebenläufigkeit (Concurrency) von Prozessen?', 'Mehrere Prozesse sind gleichzeitig im System aktiv und teilen sich die verfügbare(n) CPU(s), was zu einer quasi-parallelen Ausführung führt. [Source 51]'],
-  ['Was ist eine Race Condition (Wettlaufsituation)?', 'Ein Fehlerzustand, der auftritt, wenn das Ergebnis einer Operation von der unvorhersehbaren Reihenfolge oder dem Timing anderer Ereignisse abhängt (z.B. beim Zugriff mehrerer Prozesse auf geteilte Daten). [Source 52]'],
-  ['Was ist ein kritischer Abschnitt (Critical Section)?', 'Ein Codeabschnitt, der auf gemeinsame Ressourcen zugreift und der zu einem Zeitpunkt nur von einem Thread/Prozess ausgeführt werden darf, um Race Conditions zu vermeiden. [Source 60]'],
-  ['Was sind die Grundideen hinter dem Konzept des virtuellen Speichers?', '1. Prozess kann laufen, auch wenn nur Teile im Hauptspeicher sind.\n2. Speicherbedarf kann größer als phys. Speicher sein.\n3. Programmierer sieht kontinuierlichen Adressraum (ab 0). [Source 62, 64, 65]'],
-  ['Was ist Swapping?', 'Das Auslagern von Speicherbereichen (ganzer Prozesse oder Teile davon) aus dem Hauptspeicher auf einen Sekundärspeicher (z.B. Festplatte), um Hauptspeicher freizugeben. [Source 68, 69]'],
-  ['Was ist der Unterschied zwischen Swapping und Paging?', 'Swapping bezieht sich auf das Auslagern von Speicherbereichen. Paging ist der Mechanismus der virtuellen Adressierung, der virtuelle Adressen auf physische abbildet (oft seitenweise). Paging *ermöglicht* effizientes Swapping von einzelnen Seiten (Demand Paging). [Source 72, 73]'],
-  ['Wer entwickelte das Konzept des virtuellen Speichers?', 'Fritz-Rudolf Güntsch (1956 an der TU Berlin). [Source 76]'],
-  ['Unterscheide virtuelle und physikalische Adressen.', 'Virtuelle Adresse: Adresse aus Sicht des Programms/Prozesses. Physikalische Adresse: Adresse, die tatsächlich an den Speicherbus angelegt wird. Die MMU übersetzt virtuelle in physikalische Adressen. [Source 79, 87]'],
-  ['Was sind Seiten (Pages) und Seitenrahmen (Page Frames)?', 'Pages: Blöcke fester Größe im virtuellen Adressraum. Page Frames: Blöcke fester Größe im physikalischen Hauptspeicher, in die Pages geladen werden können. [Source 81, 82]'],
-  ['Was ist eine typische Seitengröße in 32-Bit-Systemen und warum ist die Größe ein Kompromiss?', 'Typisch 4 kByte. Kompromiss: Zu kleine Seiten -> hohe Verwaltungs-Overhead, viele I/O-Operationen. Zu große Seiten -> interne Fragmentierung (Speicherverschwendung innerhalb einer Seite). [Source 83, 84]'],
-  ['Wie unterstützt die virtuelle Adressierung den Speicherschutz?', 'Die Seitentabellen enthalten Zugriffsrechte (Lesen, Schreiben, Ausführen) pro Seite. Die MMU prüft diese bei jedem Zugriff und löst bei Verletzung einen Fehler (Interrupt) aus. [Source 88, 89, 90]'],
-  ['Was ist ein Page Fault?', 'Ein Interrupt, der von der MMU ausgelöst wird, wenn auf eine virtuelle Adresse zugegriffen wird, deren Seite sich aktuell nicht im Hauptspeicher befindet (oder der Zugriff ungültig ist). Das OS muss die Seite dann laden (Demand Paging). [Source 93, 90]'],
-  ['Warum verwendet man mehrstufige Seitentabellen (Multi-Level Paging)?', 'Um den Speicherbedarf für die Seitentabellen selbst zu reduzieren, insbesondere bei großen Adressräumen. Eine lineare Tabelle wäre riesig. [Source 95, 96, 97]'],
-  ['Wie viele Stufen von Seitentabellen verwendet Linux standardmäßig (seit Kernel 2.6.11)?', 'Vierstufige Seitentabellen. [Source 101]'],
-  ['Was ist ein Systemcall (Systemaufruf)?', 'Ein Dienstaufruf einer Anwendung an das Betriebssystem, um privilegierte Operationen auszuführen (z.B. I/O, Prozessmanagement). Dabei wird in den Kernel-Modus gewechselt. [Source 109, 110]'],
-  ['Nenne Beispiele für typische Systemcalls unter Linux.', '`fork` (Prozess erzeugen), `exit` (Prozess beenden), `open`/`close` (Datei öffnen/schließen), `read`/`write` (Datei lesen/schreiben). [Source 114]'],
-  ['Was ist ein Trap im Kontext von Systemcalls?', 'Ein Software-Interrupt, der den kontrollierten Übergang vom User-Modus in den Kernel-Modus auslöst, um einen Systemdienst auszuführen. Die Anwendung übergibt dabei meist eine Nummer für den gewünschten Dienst. [Source 115, 122]'],
-  ['Warum ist ein Systemcall deutlich langsamer als ein normaler Funktionsaufruf?', 'Weil ein Moduswechsel (User->Kernel), ein Kontextwechsel (Sichern/Laden von Registern, evtl. MMU-Anpassung) und die Ausführung im privilegierten Modus erforderlich sind. [Source 127, 128, 129]'],
-  ['Was sind die Hauptaufgaben des I/O-Managements?', '1. Schnittstelle zur Hardware-Integration bereitstellen.\n2. Einheitliche API für Peripherie-Zugriff bieten.\n3. Ordnungsstrukturen für Daten (Dateisysteme) realisieren. [Source 139]'],
-  ['Was ist ein Gerätetreiber?', 'Kernelspezifischer Code, der die Ansteuerung eines bestimmten Hardware-Geräts oder Gerätetyps ermöglicht. Läuft typischerweise im Kernel-Modus. [Source 138, 185]'],
-  ['Was ist ein Dateisystem (File System)?', 'Der Teil des Betriebssystems, der sich mit der Organisation, Speicherung und Verwaltung von Dateien auf Speichermedien befasst. Oft hierarchisch (Verzeichnisbaum). [Source 142, 144]'],
-  ['Was ist die Wurzel (Root) des Dateisystems unter Unix/Linux?', 'Das oberste Verzeichnis im systemweiten Verzeichnisbaum, bezeichnet mit `/`. [Source 148]'],
-  ['Was ist ein Inode?', 'Eine Datenstruktur in Unix-artigen Dateisystemen, die Metadaten über eine Datei (Typ, Rechte, Größe, Zeitstempel) enthält und auf die Datenblöcke der Datei verweist. Jeder Inode hat eine eindeutige Nummer. [Source 154, 155, 157]'],
-  ['Was ist Journaling in Dateisystemen (z.B. ext3, ext4)?', 'Ein Mechanismus, bei dem Änderungen am Dateisystem zuerst in einem Protokoll (Journal) festgehalten werden, bevor sie tatsächlich durchgeführt werden. Dies erhöht die Robustheit gegen Systemabstürze. [Source 161, 162]'],
-  ['Was ist das Virtuelle Dateisystem (VFS) in Linux?', 'Eine Abstraktionsschicht im Kernel, die eine einheitliche Schnittstelle (API) für Anwendungen zu verschiedenen konkreten Dateisystemtypen (ext4, FAT, NFS etc.) bietet. [Source 163]'],
-  ['Was sind virtuelle Dateisysteme wie `/proc` und `/sys`?', 'Dateisysteme, die nicht auf einem physischen Datenträger liegen, sondern als Schnittstelle zum Kernel dienen, um Informationen abzufragen oder Kernel-Parameter zu ändern. [Source 166]'],
-  ['Wozu dient das `/proc`-Dateisystem (procfs)?', 'Zur Bereitstellung von Informationen über laufende Prozesse und Kernel-Subsysteme (Speicher, Peripherie etc.) und teilweise zur Steuerung des Kernels. [Source 167, 168]'],
-  ['Wozu dient das `/sys`-Dateisystem (sysfs)?', 'Zur Darstellung der Kernel-Sicht auf Geräte und Treiber in einer hierarchischen Struktur, ermöglicht Abfrage und Konfiguration von Kernelobjekten aus dem Userspace. [Source 170, 171]'],
-  ['Welche Rolle spielt der `udev`-Dämon?', 'Er überwacht Kernel-Events (via netlink, oft ausgelöst durch Änderungen in `sysfs`) und erstellt/löscht dynamisch Gerätedateien im `/dev`-Verzeichnis, wenn Geräte hinzugefügt/entfernt werden. [Source 175, 176, 177]'],
-  ['Was bedeutet der Grundsatz "Everything is a file" in Unix/Linux?', 'Die Idee, dass auf viele Systemressourcen, einschließlich Hardware-Geräte, über das Dateisystem-Interface (Gerätedateien in `/dev`) zugegriffen werden kann. [Source 178]'],
-  ['Welche Hauptklassen von Geräten unterscheidet Linux?', '1. Zeichengeräte (char devices, z.B. serielle Schnittstelle, Terminal)\n2. Blockgeräte (block devices, z.B. Festplatte, USB-Stick)\n3. Netzwerkschnittstellen (networking devices). [Source 181]'],
-  ['Was kennzeichnet einen monolithischen Kernel?', 'Alle wesentlichen Betriebssystemdienste (Speicherverwaltung, Prozessverwaltung, Treiber etc.) laufen im selben Adressraum im privilegierten Kernel-Modus. [Source 194]'],
-  ['Welche Nachteile hat ein monolithischer Kernel für die Treiberentwicklung?', '1. Fehler im Treiber können das gesamte System zum Absturz bringen.\n2. Traditionell muss der Kernel für neue/geänderte Treiber neu übersetzt und gestartet werden. [Source 195, 196]'],
-  ['Wie löst Linux das Problem des Kernel-Neustarts bei Treiberänderungen?', 'Durch das Konzept der ladbaren Kernelmodule (.ko-Dateien), die zur Laufzeit in den Kernel geladen und wieder entfernt werden können. [Source 197, 200]'],
-  ['Unterscheide Built-in-Treiber und Modul-Treiber.', 'Built-in-Treiber sind fest in das Kernel-Image einkompiliert. Modul-Treiber liegen als separate Dateien vor und können dynamisch geladen/entladen werden. [Source 198, 200]'],
-  ['Warum muss ein Kernelmodul normalerweise genau zur laufenden Kernelversion passen?', 'Weil es die interne API (Funktionen, Datenstrukturen) des Kernels nutzt, die sich zwischen Versionen ändern kann. Das Modul wird gegen die Header der Ziel-Kernelversion kompiliert. [Source 201, 203, 204, 205]'],
-  ['Welche drei Arten von Funktionen enthält ein typisches Kernelmodul/Treiber?', '1. Management-Funktionen (Initialisierung/Aufräumen beim Laden/Entladen).\n2. Applikations-getriggerte Funktionen (Reaktion auf Systemcalls wie open, read, write).\n3. Hardware-Interrupt-getriggerte Funktionen (Interrupt Service Routinen). [Source 206, 207]'],
-  ['Welche drei Abarbeitungskontexte unterscheidet Linux prinzipiell?', '1. User-Kontext (Applikation läuft).\n2. Prozess-Kontext (Kernel führt Code im Auftrag einer Applikation aus, z.B. nach Systemcall).\n3. Interrupt-Kontext (Kernel behandelt einen Hardware- oder Software-Interrupt). [Source 209]'],
-  ['Was ist im Prozess-Kontext möglich, was im User-Kontext nicht geht?', 'Zugriff auf Kernel-Datenstrukturen und -Funktionen, privilegierte Instruktionen, direkter Hardware-Zugriff (über Treiber). Es besteht noch ein Bezug zum aufrufenden Prozess (`current`). [Source 211, 212]'],
-  ['Was ist im Interrupt-Kontext *nicht* möglich oder erlaubt?', 'Zugriff auf den Speicher des User-Prozesses, Aufruf von Funktionen, die schlafen legen (blockieren) könnten. Der Code sollte möglichst schnell ablaufen. [Source 214, 217, 218, 239]'],
-  ['Welche Ebenen des Unterbrechungsmodells gibt es in Linux (von unten/höchste Priorität nach oben/niedrigste Priorität)?', '1. ISR-Ebene (Hard-IRQ)\n2. Soft-IRQ-Ebene (Softirqs, Tasklets, Timer)\n3. Kernel-Ebene (Prozesskontext)\n4. User-Ebene (Applikationen). [Source 219-231]'],
-  ['Was besagt das Schichtenmodell der Unterbrechbarkeit?', 'Code auf einer bestimmten Ebene kann nur von Code auf einer darunterliegenden (höher priorisierten) Ebene unterbrochen werden. [Source 221]'],
-  ['Welche Arbeiten werden typischerweise auf die Soft-IRQ-Ebene verschoben?', 'Arbeiten, die durch einen Interrupt ausgelöst wurden, aber nicht sofort in der ISR erledigt werden müssen (zu zeitaufwändig) und nicht blockieren. [Source 227, 228]'],
-  ['Kann eine Applikation direkt auf den Kernelspace zugreifen?', 'Nein, auch nicht mit Superuser-Rechten. Der Zugriff erfolgt kontrolliert über das Systemcall-Interface. [Source 239]'],
-  ['Kann der Kernel im Prozesskontext auf den Userspace des aufrufenden Prozesses zugreifen?', 'Ja, der Kernel kennt die Seitentabellen des Prozesses und kann spezielle Funktionen (z.B. `copy_to_user`, `copy_from_user`) für den Datentransfer nutzen. [Source 213, 234]'],
-  ['Kann der Kernel im Interruptkontext auf den Userspace zugreifen?', 'Nein, im Interruptkontext gibt es keinen Bezug zu einem bestimmten Prozess und dessen Adressraum. [Source 214, 239]']
-]
+    # --- Set 1: Software Components, Ports, Runnables ---
+    [
+        "Was sind die Hauptunterschiede zwischen Sender/Receiver- und Client/Server-Ports bezüglich des Inhalts?",
+        "Sender/Receiver-Ports enthalten Datenelemente (einfach wie Integer/Float oder komplex wie Array/Record), die bei Bus-Kommunikation auf Signale gemappt werden können. Client/Server-Ports enthalten Operationen mit Argumenten, die einzeln aufgerufen werden können."
+    ],
+    [
+        "Wie unterscheidet sich die Kommunikationsrichtung und -art zwischen Sender/Receiver- und Client/Server-Ports?",
+        "Sender/Receiver-Kommunikation ist 1:n oder n:1 und asynchron. Client/Server-Kommunikation ist 1:1 oder n:1 und kann synchron oder asynchron sein."
+    ],
+    [
+        "Beschreibe das Sender-Prinzip bei Sender/Receiver-Ports.",
+        "Ein Sender stellt Daten asynchron für einen oder mehrere Empfänger bereit. Er erwartet keine Daten zurück und kennt die Anzahl der Empfänger nicht. Dies entspricht der Signal-Kommunikation zwischen ECUs."
+    ],
+    [
+        "Beschreibe das Client/Server-Prinzip bei Client/Server-Ports.",
+        "Der Server bietet Dienste an, die vom Client angefordert werden. Eine AUTOSAR-Softwarekomponente kann Client, Server oder beides sein. Kommunikation ist sowohl innerhalb einer ECU (Intra-ECU) als auch zwischen ECUs (Inter-ECU) möglich."
+    ],
+    [
+        "Wofür werden Sender-Receiver Ports hauptsächlich verwendet?",
+        "Sender-Receiver Ports werden für den Datenfluss im System verwendet, um Daten zwischen Softwarekomponenten auszutauschen."
+    ],
+    [
+        "Können über einen einzelnen Sender-Receiver Port mehrere Datenelemente ausgetauscht werden?",
+        "Ja, an einen Sender-Receiver Port können mehrere Datenelemente angehängt werden, es sind nicht mehrere Ports für mehrere Datenelemente nötig."
+    ],
+    [
+        "Wofür werden Client-Server Ports hauptsächlich verwendet?",
+        "Client-Server Ports werden für den Kontrollfluss verwendet, um Operationen anzufordern."
+    ],
+    [
+        "Was sind 'Operationen' im Kontext von Client/Server-Ports?",
+        "Operationen sind Dienste, die von einem Server-Softwarekomponente angeboten und von einer Client-Softwarekomponente aufgerufen werden können. Sie sind an die Client/Server-Ports gebunden und können Argumente haben."
+    ],
+    [
+        "Was sind 'Datenelemente' im Kontext von Sender/Receiver-Ports?",
+        "Datenelemente sind die Informationen, die über Sender/Receiver-Ports ausgetauscht werden. Sie können einfache Datentypen (Integer, Float) oder komplexe Datentypen (Array, Record) sein."
+    ],
+    [
+        "Was ist eine Application Component?",
+        "Eine Application Component ist eine atomare AUTOSAR-Softwarekomponente, die den Algorithmus implementiert. Sie ist Teil der Applikation, unabhängig von der Infrastruktur und kann auf jede ECU gemappt werden."
+    ],
+    [
+        "Was ist eine Sensor/Actuator Component?",
+        "Eine Sensor/Actuator Component bereitet I/O-Daten für die Applikation auf. Sie ist an eine ECU gebunden (Constraint für Mapping) und repräsentiert die Abhängigkeit von einem speziellen Sensor oder Aktor."
+    ],
+    [
+        "Was ist eine Composition Component?",
+        "Eine Composition Component dient der logischen Organisation oder Kapselung von anderen Softwarekomponenten (SWCs) und/oder weiteren Composition Components."
+    ],
+    [
+        "Was ist der Zweck des Virtual Function Bus (VFB)?",
+        "Der Virtual Function Bus (VFB) symbolisiert die Kommunikation zwischen Softwarekomponenten auf einer logischen Ebene, bevor die Zuordnung zu ECUs erfolgt. Er abstrahiert die Kommunikation innerhalb einer ECU sowie zwischen ECUs, sodass die Applikationssoftware unabhängig von der Hardware entwickelt werden kann."
+    ],
+    [
+        "Nenne die zwei Hauptarten von Ports, die in den Dokumenten beschrieben werden.",
+        "Die zwei Hauptarten sind Sender-Receiver Ports (für Datenfluss) und Client-Server Ports (für Kontrollfluss/Operationen)."
+    ],
+    [
+        "Was ist ein Runnable?",
+        "Ein Runnable ist eine C-Funktion, die die eigentliche Implementierung innerhalb einer atomaren Softwarekomponente enthält. Es ist die ausführbare Einheit einer Softwarekomponente."
+    ],
+    [
+        "Wodurch können Runnables ausgelöst (getriggert) werden?",
+        "Runnables können durch RTE Events (Trigger) ausgeführt werden, z.B. wenn Daten empfangen werden, ein Timer abläuft oder durch einen Funktionsaufruf."
+    ],
+    [
+        "Was ist die Funktion von Triggern im Kontext von Runnables?",
+        "Trigger (RTE Events) lösen die Ausführung von Runnables aus. Beispiele sind Datenempfang, Timerablauf oder Funktionsaufrufe."
+    ],
 
+    # --- Set 2: BSW Layers & Functional Clusters ---
+    [
+        "Was ist die Hauptaufgabe des Service Layers im AUTOSAR BSW?",
+        "Der Service Layer ist die oberste Schicht des BSW und stellt Basisdienste für die Applikation und andere BSW-Module bereit (z.B. OS, Kommunikationsdienste, Speicherdienste, Diagnosedienste, ECU State Management)."
+    ],
+    [
+        "Welche Funktionalität bietet der Service Layer?",
+        "Er beinhaltet Funktionalitäten wie Diagnose (DEM, DCM, FIM), NVRAM Management (NvM), Watchdog Manager (WdgM), Kommunikation (Com, PduR, etc.), OS, Schedule Manager, ECU State Management (EcuM) und Com Channel Management (ComM)."
+    ],
+    [
+        "Was ist die Hauptaufgabe des ECU Abstraction Layers?",
+        "Der ECU Abstraction Layer macht höhere Software-Schichten unabhängig von der spezifischen ECU-Hardware, indem er eine API für den Zugriff auf Peripheriegeräte bereitstellt, unabhängig davon, ob diese intern oder extern am Mikrocontroller angebunden sind."
+    ],
+    [
+        "Welche Funktionalität bietet der ECU Abstraction Layer?",
+        "Er enthält Schnittstellen für interne und externe Peripherie sowie Treiber für externe Geräte. Er organisiert den I/O-Hardwarezugriff und stellt eine API dafür bereit."
+    ],
+    [
+        "Was bedeutet MCAL und was ist seine Hauptaufgabe?",
+        "MCAL steht für Microcontroller Abstraction Layer. Es ist die unterste Schicht des BSW und macht höhere Schichten unabhängig vom spezifischen Mikrocontroller, indem es Treiber mit direktem Zugriff auf den Mikrocontroller und seine internen Peripherien bereitstellt."
+    ],
+    [
+        "Welche Art von Treibern enthält der MCAL?",
+        "Der MCAL enthält Treiber mit direktem Zugriff auf den Mikrocontroller, dessen interne Peripherien und speicher-gemappte externe Geräte."
+    ],
+    [
+        "Was sind Complex Device Drivers (CDD) und wann werden sie eingesetzt?",
+        "CDD sind ein Sonderfall in der AUTOSAR-Architektur. Sie werden für die Ansteuerung spezieller Sensoren/Aktoren mit besonderen Timing-Anforderungen oder zur Integration von Nicht-AUTOSAR-Technologien eingesetzt. Sie haben direkten Zugriff auf Mikrocontroller-Ressourcen."
+    ],
+    [
+        "Nenne Beispiele für Anwendungen von Complex Device Drivers.",
+        "Beispiele sind Einspritzsteuerung oder Batteriemanagementsysteme, also zeitkritische Anwendungen."
+    ],
+    [
+        "Was ist die Aufgabe des COM Moduls im Kommunikations-Cluster?",
+        "Das COM Modul stellt eine signalbasierte Datenschnittstelle für die RTE bereit. Es packt Signale in Nachrichten (PDUs), sendet sie, managt Empfangsbenachrichtigungen, Initialwerte, Update-Bits und Timeouts auf Signalebene. Es kann auch als Signal-Gateway fungieren."
+    ],
+    [
+        "Was macht der PDU Router (PduR)?",
+        "Der PduR verteilt Kommunikationspakete (PDUs) zwischen den Bussystemen und verschiedenen BSW-Modulen (z.B. COM, TP-Module, Interface-Module). Er bietet auch Gateway-Funktionen zum Routen von PDUs zwischen Bussystemen."
+    ],
+    [
+        "Was ist die Aufgabe von Transport Protokoll (TP) Modulen (z.B. CanTp)?",
+        "TP-Module sind für die segmentierte Übertragung von Daten zuständig, wenn eine Nachricht nicht in einen einzelnen Frame/PDU des darunterliegenden Busses passt."
+    ],
+    [
+        "Welche Funktion haben die Interface-Module (z.B. CanIf, LinIf)?",
+        "Interface-Module bieten Hardware-unabhängige, aber Bus-typische Funktionen wie Queuing, Zusammenbau von Data-Link-Layer-PDUs/Frames und Tx/Rx-Triggerung."
+    ],
+    [
+        "Welche Funktion haben die Driver-Module (z.B. CanDrv, LinDrv)?",
+        "Driver-Module führen Hardware-Operationen aus, wie Initialisierung, Pufferfüllung und Implementierung von Interrupt Service Routinen (ISR)."
+    ],
+    [
+        "Welche Funktion haben die Transceiver-Module (z.B. CanTrcv)?",
+        "Transceiver-Module steuern die Hardware-Leitungstreiber (Transceiver-Chips) für den jeweiligen Bus."
+    ],
+     [
+        "Was macht der IPDU Multiplexer (IpduM)?",
+        "Das IpduM Modul unterstützt die Multiplexierung von I-PDUs, d.h. das Senden unterschiedlicher Datenlayouts innerhalb derselben PDU-ID, gesteuert durch ein Selector Field, oder das dynamische Zusammenfassen von PDUs in Container-PDUs."
+    ],
+    [
+        "Was ist die Hauptfunktion des ECU State Managers (EcuM)?",
+        "EcuM handhabt die grundlegenden Zustände der ECU (ECU-Zustandsmaschine: On, Off, Sleep), führt Zustandsübergänge durch, zentralisiert und validiert Weckereignisse und ist verantwortlich für den Startup und Shutdown des Systems, inklusive OS-Start."
+    ],
+    [
+        "Was ist die Hauptfunktion des Communication Managers (ComM)?",
+        "ComM steuert die Kommunikationszustände aller Kanäle (Bus-Startup/Shutdown) über eine abstrahierte Bus-Zustandsmaschine. Es ist die Schnittstelle zur Applikation für Kommunikationsanfragen und interagiert mit den Bus-spezifischen State Managern (BusSM) und dem Network Management."
+    ],
+    [
+        "Was ist die Aufgabe der Network Management Module (NM If, Bus NM)?",
+        "NM-Module (z.B. CanNm) handhaben das Netzwerkmanagement, um den Bus wach zu halten oder einen koordinierten Shutdown zu ermöglichen. Sie senden periodische NM-Nachrichten und können den Buslast durch Optimierungen reduzieren. NM If stellt eine einheitliche Schnittstelle zu den Bus-spezifischen NM-Modulen dar."
+    ],
+    [
+        "Was ist die Aufgabe der Bus State Manager Module (BusSM, z.B. CanSM)?",
+        "BusSM-Module übersetzen die Netzkommunikations-Modus-Anfragen von ComM und schalten entsprechend die Zustände der zugehörigen Treiber (z.B. CanDrv) und Transceiver (z.B. CanTrcv)."
+    ],
+    [
+        "Wofür werden Memory Services in AUTOSAR benötigt?",
+        "Da AUTOSAR keine dynamische Speicherallokation oder ein Dateisystem vorsieht, bieten Memory Services eine Schnittstelle zum permanenten Speichern von Daten (z.B. Diagnosedaten, Konfigurationsparameter) im nicht-flüchtigen Speicher (NVRAM)."
+    ],
+    [
+        "Was ist die Aufgabe des NVRAM Managers (NvM)?",
+        "NvM ist die Schnittstelle zur Applikation (über RTE) für den Zugriff auf den nicht-flüchtigen Speicher. Es verwaltet konfigurierte Speicherblöcke und ermöglicht deren Schreiben und Lesen über die darunterliegenden Abstraktionsschichten."
+    ],
+    [
+        "Welche Module befinden sich in der ECU Abstraction Schicht des Memory Stacks?",
+        "Die Memory Abstraction Interface (MemIf), EEPROM Abstraction (Ea) und Flash EEPROM Emulation (Fee)."
+    ],
+    [
+        "Was ist die Aufgabe des Memory Abstraction Interface (MemIf)?",
+        "MemIf leitet die Anfragen vom NvM an die passenden technologie-spezifischen Abstraktionsmodule (Ea oder Fee) weiter."
+    ],
+    [
+        "Was ist die Aufgabe der EEPROM Abstraction (Ea) und Flash EEPROM Emulation (Fee)?",
+        "Ea und Fee bieten eine Abstraktion der spezifischen Speichertechnologie (EEPROM oder Flash). Sie implementieren die Logik zum Lesen und Schreiben für die jeweilige Technologie und kommunizieren mit den darunterliegenden Treibern."
+    ],
+    [
+        "Welche Module befinden sich in der MCAL Schicht des Memory Stacks?",
+        "Hardware-spezifische Speicher-Treiber (Memory Drivers), z.B. für internes Flash (Fls) oder EEPROM (Eep) oder für externe Speicherbausteine."
+    ],
+    [
+        "Was ist die Aufgabe des Watchdog Managers (WdgM)?",
+        "WdgM überwacht die korrekte zeitliche Ausführung von Software-Entitäten (z.B. Runnables), indem es deren 'Lebenszeichen' (Alive Indications) entgegennimmt. Er leitet einen globalen Überwachungsstatus ab und triggert periodisch die Watchdog Interface (WdgIf), wenn alles in Ordnung ist."
+    ],
+    [
+        "Was ermöglicht der Watchdog Manager (WdgM)?",
+        "Er ermöglicht verschiedene Überwachungsmechanismen wie Deadline Monitoring und Lebendüberwachung (Alive Supervision)."
+    ],
+    [
+        "Was ist die Aufgabe der Watchdog Interface (WdgIf)?",
+        "WdgIf stellt eine standardisierte Schnittstelle zu den Watchdog-Treibern dar und triggert den/die Hardware-Watchdog(s) basierend auf den Anweisungen des WdgM."
+    ],
+    [
+        "Was ist die Aufgabe des Watchdog Drivers (WdgDrv)?",
+        "WdgDrv steuert den eigentlichen Hardware-Watchdog (intern oder extern) an, z.B. um dessen Timer zurückzusetzen."
+    ],
+    [
+        "Was passiert, wenn eine überwachte Entität den WdgM nicht rechtzeitig informiert?",
+        "Wenn nicht alle überwachten Entitäten rechtzeitig 'melden', informiert der WdgM die WdgIf nicht (oder meldet einen Fehler). Daraufhin wird der WdgDrv den Hardware-Watchdog nicht triggern (zurücksetzen), der Timer läuft ab und löst einen Reset der ECU aus."
+    ],
+    [
+        "Was ist die Aufgabe des Diagnostic Event Managers (DEM)?",
+        "Der DEM ist der Fehlerspeicher. Er empfängt und verarbeitet Diagnose-Events (Fehler) von BSW-Modulen und der Applikation und speichert sie persistent (oft unter Nutzung des NvM)."
+    ],
+    [
+        "Was ist die Aufgabe des Diagnostic Communication Managers (DCM)?",
+        "Der DCM implementiert Diagnosekommunikationsprotokolle (wie UDS - Unified Diagnostic Services) busunabhängig. Er wickelt die Kommunikation mit externen Diagnosegeräten ab."
+    ],
+    [
+        "Was ist die Aufgabe des Function Inhibition Managers (FIM)?",
+        "Der FIM ermöglicht es, Funktionalitäten der Applikation abhängig vom Status bestimmter diagnostischer Events (Fehler im DEM) zu sperren oder freizugeben. Die Applikation fragt den FIM nach der Erlaubnis (_Fim_GetFunctionPermission_), eine Funktion auszuführen."
+    ],
+    [
+        "Was ist das OS Modul in AUTOSAR?",
+        "Das OS Modul ist das Echtzeitbetriebssystem einer AUTOSAR ECU. Es basiert auf dem OSEK/VDX Standard und erweitert diesen um Funktionen wie Schedule Tables, Timing Protection und Memory Protection (je nach Scalability Class SC1-SC4)."
+    ],
+    [
+        "Was sind die Hauptelemente oder Objekte des AUTOSAR OS?",
+        "Tasks, Events, Alarms, Interrupts, Inter OS Communication (IOC) und Resources."
+    ],
+    [
+        "Wofür ist das AUTOSAR OS hauptsächlich verantwortlich?",
+        "Es ist verantwortlich für das Scheduling von Tasks, die Verwaltung von Events, Alarms (zeitgesteuerte Aktivierung) und Interrupts, sowie die Verwaltung von Ressourcen und die Kommunikation zwischen Tasks/ISRs."
+    ],
+    [
+        "Warum müssen OS und RTE oft gemeinsam regeneriert werden?",
+        "Da das OS eng mit der RTE verbunden ist (z.B. löst ein RTE Timer Event einen OS Alarm aus, der eine Task aktiviert), müssen bei Änderungen, die beide betreffen (z.B. Änderung eines Timings), beide neu generiert werden. Beide sind statisch konfiguriert."
+    ],
+    [
+        "Was ist die Hauptaufgabe des I/O Hardware Abstraction (IoHwAb) Moduls?",
+        "IoHwAb stellt die Verbindung zwischen der RTE (und damit den SWCs) und den I/O-Kanälen der ECU dar. Es kapselt den Zugriff auf die I/O-Treiber (wie ADC, DIO, PWM) und stellt die I/O-Signale der ECU abstrahiert zur Verfügung."
+    ],
+    [
+        "Welche Abstraktion bietet IoHwAb?",
+        "Es abstrahiert die Lokation der I/O-Peripheriegeräte (on-chip/on-board) und das Pin-Layout, aber nicht den Sensor/Aktor selbst."
+    ],
+    [
+        "Welche Funktionalitäten kann IoHwAb neben der reinen Abstraktion bieten?",
+        "Es kann auch die Aufbereitung von gelesenen Werten übernehmen, z.B. das Entprellen von digitalen Signalen (Debouncing)."
+    ],
+    [
+        "Nenne Beispiele für I/O Treiber, die unterhalb des IoHwAb liegen.",
+        "ADC (Analog-Digital-Converter), DIO (Digital Input/Output), PWM (Pulse Width Modulation). Weitere wären z.B. ICU (Input Captur Unit) oder OCU (Output Compare Unit)."
+    ],
+
+    # --- Set 3: AUTOSAR Methodology ---
+    [
+        "Was ist die AUTOSAR Methodik?",
+        "Die AUTOSAR Methodik definiert eine Abfolge von Schritten und Aktivitäten für die Entwicklung von AUTOSAR-Systemen. Sie führt von einer Beschreibung der Soft- und Hardware bis zur Generierung einer ausführbaren Datei pro Steuergerät (ECU)."
+    ],
+    [
+        "Was sind die Hauptziele der AUTOSAR Methodik?",
+        "1. Entwicklung von Softwarefunktionalität unabhängig vom Rest des Systems.\n2. Bereitstellung einer Basis für eine standardisierte Zusammenarbeit zwischen OEM und TIER1-Zulieferern durch einheitliche Vorlagen (Templates)."
+    ],
+    [
+        "Welche Probleme löst die AUTOSAR Methodik?",
+        "Sie ermöglicht die Entwicklung von Software unabhängig von der Hardware und schafft eine standardisierte Grundlage für die Zusammenarbeit zwischen verschiedenen Partnern (OEM, Tier1), was die Wiederverwendbarkeit und Austauschbarkeit von Software fördert."
+    ],
+    [
+        "Welches Dateiformat wird in der AUTOSAR Methodik für den Austausch von Beschreibungen verwendet und warum?",
+        "Das XML-Dateiformat (.arxml) wird verwendet, um einen standardisierten und funktionierenden Austausch von Beschreibungen (z.B. System Configuration Description, ECU Extract, ECU Configuration Description) zwischen OEM und Zulieferern sicherzustellen."
+    ],
+    [
+        "Nenne Beispiele für Beschreibungsdateien (oft im .arxml Format) in der AUTOSAR Methodik.",
+        "System Configuration Description, ECU Extract (Auszug aus der Systemkonfiguration für eine ECU), ECU Configuration Description (ECUC)."
+    ],
+    [
+        "Skizziere grob den AUTOSAR Workflow zwischen OEM und Tier1.",
+        "1. OEM trifft Designentscheidungen und erstellt die System Configuration Description.\n2. OEM teilt die Systemkonfiguration auf und gibt ECU-spezifische Auszüge (ECU Extracts) an die Tier1-Zulieferer.\n3. Tier1 konfiguriert die ECU-spezifischen Details (z.B. OS, BSW) mithilfe eines ECU Configuration Generators und dem ECU Extract.\n4. Tier1 generiert die ECU Configuration Description (ECUC).\n5. Basierend auf ECUC und den SWC-Infos aus dem Extract generiert Tier1 die RTE und die BSW-Konfiguration für die spezifische ECU."
+    ],
+    [
+        "Was ist eine ECU Configuration Description (ECUC)?",
+        "Eine ECUC ist eine Beschreibungsdatei, die die Konfiguration der Basissoftware (BSW) und des RTE für eine spezifische ECU enthält. Sie wird vom Zulieferer (Tier1) mithilfe eines ECU Configuration Generators erstellt."
+    ],
+    [
+        "Warum muss der Tier1-Zulieferer die Konfiguration (z.B. des OS) oft selbst ergänzen?",
+        "Weil der ECU Extract vom OEM oft nicht alle Details enthält, die sehr Hardware- oder ECU-spezifisch sind (wie z.B. OS-Konfiguration). Diese müssen vom Zulieferer hinzugefügt werden."
+    ],
+    [
+        "Beschreibe kurz Use Case 1 bezüglich der Aufgabenverteilung zwischen OEM und Tier1.",
+        "Use Case 1: OEM kümmert sich nur um die Netzwerkkommunikation. Tier1 ist verantwortlich für die komplette Implementierung aller ECU-Funktionen (Data Mapping, Strukturierung via Compositions, Atomics, Service Components)."
+    ],
+    [
+        "Beschreibe kurz Use Case 2 bezüglich der Aufgabenverteilung zwischen OEM und Tier1.",
+        "Use Case 2: OEM definiert Kommunikation, interne Struktur (Compositions, Connectors) und Data Mapping. Tier1 implementiert die Funktionen mittels Atomics und Services."
+    ],
+    [
+        "Beschreibe kurz Use Case 3 bezüglich der Aufgabenverteilung zwischen OEM und Tier1.",
+        "Use Case 3: OEM definiert Kommunikation, Compositions, Connectors, Data Mapping UND implementiert bereits einige Funktionen mittels Atomics. Tier1 implementiert die verbleibenden Funktionen mittels Atomics und Services."
+    ],
+    [
+        "Was ist eine Herausforderung bei den verschiedenen Use Cases in der AUTOSAR Methodik?",
+        "Die klare Abgrenzung und der standardisierte Austausch der Verantwortlichkeiten und der dazugehörigen Beschreibungsartefakte (.arxml) zwischen OEM und Tier1, je nachdem, wie detailliert der OEM die Vorgaben macht."
+    ],
+
+    # --- Set 4: RTE ---
+    [
+        "Was sind wichtige Funktionen und Charakteristika der AUTOSAR Runtime Environment (RTE)?",
+        "Die RTE konfiguriert sich selbst (z.B. Mapping von Runnables zu OS-Tasks), konfiguriert Teile des OS (Tasks, Events, Alarms), triggert Runnables über RTE Events, implementiert die Kommunikation zwischen SWCs (als Realisierung des VFB), abstrahiert das OS und BSW und verhindert direkten Zugriff von SWCs darauf."
+    ],
+    [
+        "Welche Rolle spielt die RTE als Kommunikationsschnittstelle?",
+        "Die RTE agiert als Implementierung des Virtual Function Bus (VFB) und stellt die Kommunikationsmechanismen (API-Aufrufe wie Rte_Write, Rte_Read, Rte_Call) für SWCs bereit."
+    ],
+    [
+        "Nenne Beispiele für RTE Events, die Runnables triggern können.",
+        "Init, TimingEvent, DataReceivedEvent (S/R), DataReceiveErrorEvent (S/R), DataSendCompletedEvent (S/R), OperationInvokedEvent (C/S), AsynchronousServerCallReturnsEvent (C/S), ModeSwitchEvent, ModeSwitchAckEvent, ExternalTriggerOccurredEvent, InternalTriggerOccurredEvent, BackgroundEvent."
+    ],
+    [
+        "Wie unterscheidet sich die Kommunikation aus Sicht der RTE/des SWC-Codes bei Inter-ECU vs. Intra-ECU Kommunikation?",
+        "Aus Sicht des SWC-Codes gibt es keinen Unterschied. Die RTE abstrahiert die Kommunikationspfade. Der SWC verwendet immer dieselben RTE-API-Aufrufe (z.B. Rte_Write, Rte_Read). Die RTE leitet die Aufrufe entweder direkt an ein anderes Runnable (Intra-ECU) oder an das BSW (z.B. Com-Modul für Inter-ECU) weiter."
+    ],
+    [
+        "Was ist eine Exclusive Area (EA)?",
+        "Eine Exclusive Area erlaubt es, atomare Abschnitte im Code zu definieren, um Race Conditions zu verhindern, wenn Runnables derselben Komponente auf unterschiedlichen Tasks laufen und auf gemeinsame Ressourcen zugreifen könnten. Die Implementierung ist konfigurierbar (z.B. Interrupt Lock, OS Resource)."
+    ],
+    [
+        "Was ist eine Inter Runnable Variable (IRV)?",
+        "Eine IRV ist eine Variable, die die Kommunikation zwischen zwei Runnables derselben Softwarekomponente ermöglicht. Die RTE stellt eine Interrupt-sichere Zugriffs-API dafür bereit."
+    ],
+    [
+        "Beschreibe die 'Direct Communication' bei Sender/Receiver.",
+        "Direkte Kommunikation: Die RTE stellt einen Puffer bereit. Jeder Schreibvorgang überschreibt den Puffer vollständig (Last-is-best Semantik). Nur die zuletzt geschriebenen Daten sind verfügbar."
+    ],
+    [
+        "Beschreibe die 'Buffered Communication' bei Sender/Receiver.",
+        "Gepufferte Kommunikation: Ein Runnable schreibt während seiner Ausführung in einen exklusiven 'Shadow Buffer'. Erst am Ende der Ausführung werden die Daten aus dem Shadow Buffer in den eigentlichen RTE-Puffer kopiert."
+    ],
+    [
+        "Beschreibe die 'Queued Communication' bei Sender/Receiver.",
+        "Queued Kommunikation: Die RTE verwendet eine FIFO-Queue. Jeder Schreibvorgang fügt ein Element zur Queue hinzu, jeder Lesevorgang entfernt ein Element. Keine Last-is-best Semantik."
+    ],
+    [
+        "Was ist ein 'AUTOSAR Interface'?",
+        "Ein Interface, das mit generischen AUTOSAR-Mitteln beschrieben wird, dessen Semantik aber NICHT im AUTOSAR-Standard vorgeschrieben ist. Wird von SWCs und der ECU Abstraction verwendet. Kommunikation erfolgt über Ports (z.B. Rte_Write_<p>_<d> oder Rte_Call_<p>_<o>)."
+    ],
+    [
+        "Was ist ein 'Standardized Interface'?",
+        "Ein Interface, dessen Semantik im AUTOSAR-Standard vorgeschrieben ist, das aber NICHT mit generischen AUTOSAR-Mitteln (Ports) beschrieben wird. Beispiel: Direkte Aufrufe von BSW-Modulen wie EcuM (z.B. Rte_Start(), Rte_Stop() - Hinweis: Diese könnten auch als Standardized AUTOSAR Interfaces gelten, die Unterscheidung ist manchmal unscharf)."
+    ],
+    [
+        "Was ist ein 'Standardized AUTOSAR Interface'?",
+        "Ein Interface, das mit generischen AUTOSAR-Mitteln (Service Ports) beschrieben wird UND dessen Semantik im AUTOSAR-Standard vorgeschrieben ist. Wird exklusiv für die Dienste der Basissoftware (BSW) verwendet (z.B. Zugriff auf DEM über Rte_Call_<port>_SetEventStatus)."
+    ]
+]
 # Du kannst diese Liste nun kopieren. Jede Karte ist jetzt eine Liste mit zwei Elementen:
 # dem Text für die Vorderseite und dem Text für die Rückseite.
 # print(cards) # Optional: Zum Anzeigen der Karten
 
-erstelle_anki_karten(cards, "Allgemeinwissen")
+erstelle_anki_karten(cards, "AUTOSARSection1")
