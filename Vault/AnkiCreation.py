@@ -130,8 +130,74 @@ cards = [
   ["Wie funktioniert das Indexieren und Slicing von Tensoren in TensorFlow?", "Ähnlich wie bei Python-Listen oder NumPy-Arrays kann man auf Elemente oder Bereiche (Slices) eines Tensors zugreifen. Die Syntax ist typischerweise `tensor[start:stop:step]`.\n- `start`: Der Startindex des Slice (inklusiv).\n- `stop`: Der Endindex des Slice (exklusiv).\n- `step`: Die Schrittweite.\nNegative Indizes zählen vom Ende des Tensors. TensorFlow bietet auch spezialisierte Operationen wie `tf.slice`, `tf.gather` für komplexere Indexierungsaufgaben."]
 ]
 
+AutosarMemory = [
+    # --- Grundprinzipien & Module ---
+    ['Was ist die zentrale Motivation für die Verwendung von nichtflüchtigem Speicher?',
+     'Die **Datenpersistenz bei Stromausfall**. Informationen müssen nach einem Neustart verfügbar sein, da der RAM flüchtig ist.'],
+    ['Was ist der Hauptunterschied beim Überschreiben von EEPROM und Flash?',
+     'EEPROM kann direkt (Byte für Byte) überschrieben werden. Bei Flash muss vor dem Schreiben einer Page der gesamte Sektor gelöscht werden.'],
+    ['Was ist der kleinste adressierbare Bereich im EEPROM?',
+     'Normalerweise 1 bis wenige Bytes.'],
+    ['Was ist der kleinste adressierbare Bereich im Flash?',
+     'Eine "Page", die typischerweise deutlich größer als ein Byte ist (z.B. 8 Bytes).'],
+    ['Listen und beschreiben Sie die speicherbezogenen Module.',
+     'Der AUTOSAR-Speicherstack besteht aus:\n- **NvM:** Schnittstelle zur Anwendung.\n- **MemIf:** Leitet Anfragen an Ea oder Fee weiter.\n- **Ea:** Abstrahiert EEPROM-Hardware (Walking-Block).\n- **Fee:** Emuliert EEPROM auf Flash-Hardware (Chunks & Sector-Switch).\n- **Eep/Fls:** Treiber für die jeweilige Hardware (MCAL).'],
+    ['Welches Modul leitet NvM-Anfragen weiter?',
+     'Das **MemIf (Memory Interface)**.'],
+    ['An welche Module leitet das MemIf weiter?',
+     'An die **Ea** (für EEPROM-Speicher) oder die **Fee** (für Flash-Speicher).'],
+    ['Was ist die Hauptaufgabe der Module Ea und Fee?',
+     'Die Abstraktion der jeweiligen Speichertechnologie und die Umgehung ihrer Hardware-Limitierungen (begrenzte Schreib-/Löschzyklen).'],
+    ['In welcher Schicht der AUTOSAR-Architektur befinden sich die Treiber Fls und Eep?',
+     'In der **MCAL (Microcontroller Abstraction Layer)**.'],
+
+    # --- NvM (Nonvolatile Memory Manager) ---
+    ['Erinnern Sie sich an die Rolle des NvM.',
+     'Der NvM ist die Schnittstelle zur Anwendung. Er verwaltet Nv-Blöcke abstrakt, unabhängig von der Hardware, und führt Lese-/Schreib-Jobs aus.'],
+    ['Was ist ein NvBlockDescriptor?',
+     'Die konfigurierbare Einheit im NvM, die einen abstrakten Speicherplatz (einen Nv-Block) für die Anwendung darstellt.'],
+    ['Wie wickelt der NvM die meisten seiner Aufgaben ab?',
+     '**Asynchron** über eine Job-Warteschlange (Job-queue) innerhalb seiner Main-Function und der Main-Functions der untergeordneten Module.'],
+    ['Nennen Sie drei wichtige Merkmale, die für Nv-Blöcke konfiguriert werden können.',
+     '1. **Datenvalidität** (z.B. CRC)\n2. **Redundanz**\n3. **Schreibschutz** (permanent oder zur Laufzeit)'],
+    ['Beschreiben Sie die Rolle des NvM während des Herunterfahrens und Startens.',
+     '**Herunterfahren:** Führt `NvM_WriteAll()` aus, um alle relevanten Daten zu speichern.\n**Starten:** Führt `NvM_ReadAll()` aus, um die gespeicherten Daten wiederherzustellen.'],
+    ['Wie wird die Datenkonsistenz zwischen RAM und NV-Speicher oft gehandhabt?',
+     'Durch einen "RAM-Spiegel" (RAM mirror) und Synchronisationsmechanismen wie Callbacks oder Status-Flags (z.B. "Set Ram Block Status").'],
+    ['Identifizieren Sie RAM- und ROM-Blöcke.',
+     '- **RAM-Block:** Ein Puffer im RAM (RAM-Spiegel), in dem die Applikation arbeitet und auf den der NvM zugreift.\n- **ROM-Block:** Enthält Standarddaten, die bei einem Lesefehler als Fallback geladen werden können.'],
+    ['Nennen Sie die Arten von Nv-Blöcken.',
+     'Nv-Blöcke werden nach ihrer Konfiguration unterschieden, z.B.: Standard, Redundant, mit CRC, Write-Once. Die primäre Unterscheidung ist aber der Speicherort: Flash (via Fee) oder EEPROM (via Ea).'],
+
+    # --- Ea & Fee (Abstraktionsschicht) ---
+    ['Beschreiben Sie das "Walking-Block"-Konzept der Ea.',
+     'Ein Mechanismus zum **Wear-Leveling** von EEPROM. Es werden mehrere Kopien eines Blocks angelegt, die reihum beschrieben werden, um die Schreibzyklen aufzuteilen und so die Lebensdauer zu erhöhen.'],
+    ['Beschreiben Sie die Rolle von Chunks im Fee-Modul.',
+     '**Chunks** sind dynamisch allokierte Speicherbereiche im Flash. Sie enthalten Instanzen von Fee-Blöcken und werden zu einer verketteten Liste verbunden, um einen Sektor sequenziell zu füllen und Löschvorgänge zu minimieren.'],
+    ['Was passiert, wenn ein Chunk im Fee voll ist?',
+     'Bei der nächsten Schreibanforderung wird ein neuer, mit dem alten verknüpfter Chunk im logischen Sektor angelegt.'],
+    ['Was ist ein "Sector-Switch" und welche Arten gibt es?',
+     'Ein Prozess im Fee, bei dem die neuesten Daten von einem vollen in einen leeren Sektor kopiert werden. Arten:\n- **BSS (Background):** Unterbrechbar, läuft bei Idle-Zeit.\n- **FSS (Foreground):** Nicht unterbrechbar, Notsituation vor Datenverlust.'],
+    ['Was ist eine Fee Partition?',
+     'Eine Fee Partition besteht aus mindestens zwei logischen Sektoren, um den Sector-Switch zu ermöglichen.'],
+
+    # --- Applikationsschicht & NvBlockSWC ---
+    ['Erinnern Sie sich an die Rolle von PiM im Vergleich zum NvBlockSWC-Ansatz.',
+     '**PiM (AUTOSAR 3):** Privater Speicher pro SWC, was Datenverteilung erschwert und keinen Zugriffsschutz bietet.\n**NvBlockSWC (AUTOSAR 4):** Löst diese Probleme durch Datenaggregation und kontrollierte Verteilung.'],
+    ['Beschreiben Sie den Zweck von NvBlockSWC.',
+     'Ein spezieller SWC-Typ, der NV-Daten von mehreren Anwendungs-SWCs aggregiert, um die Speichernutzung zu optimieren und die Datenverteilung über Standard-Ports zu vereinfachen.'],
+    ['Was ist ein "Fan-in" bei NvBlockSWCs?',
+     'Mehrere SWCs schreiben ihre NV-Elemente in denselben, von einem NvBlockSWC verwalteten Nv-Block.'],
+    ['Was ist ein "Fan-out" bei NvBlockSWCs?',
+     'Ein von einem NvBlockSWC verwalteter Nv-Block versorgt mehrere empfangende SWCs mit denselben NV-Daten.'],
+    ['Welchen Vorteil bietet die Datenaggregation in einem NvBlockSWC?',
+     'Effizientere Speichernutzung, da der Verwaltungs-Overhead pro Block reduziert wird (besseres Verhältnis von Nutzer- zu Verwaltungsdaten).'],
+    ['Erinnern Sie sich an die Konfiguration von Service Needs.',
+     'Ein Mechanismus zur Synchronisation von BSW- und Anwendungsentwicklung. Beim Top-Down-Ansatz definiert ein SWC einen "Service Need", aus dem das BSW-Konfigurationstool automatisch die passende BSW-Konfiguration ableiten kann.']
+]
+
 # Du kannst diese Liste nun kopieren. Jede Karte ist jetzt eine Liste mit zwei Elementen:
 # dem Text für die Vorderseite und dem Text für die Rückseite.
 # print(cards) # Optional: Zum Anzeigen der Karten
 
-erstelle_anki_karten(cards, "Tensorflow1")
+erstelle_anki_karten(AutosarMemory, "AutosarMemory")
