@@ -9,5 +9,15 @@ Tasks play a crucial role in achieving realtime behavior, responsiveness and pro
 # What is a basic task?
 Basic tasks are typically associated with periodic activations, but can also be activated by user code. Basic tasks are tpically used for timetriggered operations and perform activities such as data processing, control operations or communication tasks but also initializations. 
 
+States: Suspended - activate Task -> Ready - start -> running
+running - preempt ->Ready
+running - TerminateTask -> Suspend
+
 # What is an extended task?
 Extended tasks offer more flexibility and event-driven execution compared to basic tasks. They can be triggered by specific events or stimuli rather than strictly following a fixed periodic schedule. Extended tasks are activated in response to external events or system conditions and are used for handling event-triggered operations or sporadic activities. 
+
+States: Suspended - activate Task -> Ready - start -> running
+running - WaitEvent -> Waiting (setEvent) - Release -> Ready
+running - preempt ->Ready
+running - TerminateTask -> Suspend
+
