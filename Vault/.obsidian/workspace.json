@@ -1,0 +1,194 @@
+{
+  "main": {
+    "id": "beab34165477d263",
+    "type": "split",
+    "children": [
+      {
+        "id": "5445aeae254c7a91",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "57cf285a98049a2c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics/Introduction.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Introduction"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "116cc9b40079b312",
+    "type": "split",
+    "children": [
+      {
+        "id": "9f0b19183149f6c0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3670b9344966f771",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "7d192c7920736b66",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "8d2a21a63d3d8071",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1c2bd77990962c8d",
+    "type": "split",
+    "children": [
+      {
+        "id": "f5c9366dc225427d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "852d4bc7f8e44d2d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Bildung/TreiberentwicklungUnterLinux/14.05.2025.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 14.05.2025"
+            }
+          },
+          {
+            "id": "8a646f4a5e2c785b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Bildung/TreiberentwicklungUnterLinux/14.05.2025.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 14.05.2025"
+            }
+          },
+          {
+            "id": "ddf0a7fad7212a19",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "335600f37e34c90a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Bildung/TreiberentwicklungUnterLinux/14.05.2025.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 14.05.2025"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "57cf285a98049a2c",
+  "lastOpenFiles": [
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/Summary.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics/Introduction.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Untitled.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Untitled 1.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/NvBlockSwComponents.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/Service Mapping.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/Memory Handling.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/The MICROSAR Classic Mem Solution.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/Principles of Memory Technologies.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/Introduction.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess",
+    "Bildung/Tensorflow/Untitled.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice",
+    "Bildung/Vectrex/Highscore.md",
+    "Bildung/TreiberentwicklungUnterLinux/28.05.md",
+    "Bildung/TreiberentwicklungUnterLinux/14.05.2025.md",
+    "Bildung/Ideen.md",
+    "Bildung/TreiberentwicklungUnterLinux/deskMate Quickstart for Vector Remote Exercises_CP.pdf",
+    "Bildung/Tensorflow"
+  ]
+}
