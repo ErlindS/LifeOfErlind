@@ -55,14 +55,10 @@ The RTE as a communication mechanism acts as an implementation of the VFB.
 
 
 # Inter ECU Sender/Receiver Communication
-```
-
-```
 The figure below depicts a communication between two SWCs from two different ECUs. SWC1  sends a message to SWC2. Means: _Rte_Write_Port_Data()_ is executed regarding Runnable1 and _Rte_Read_Port_Data()_ is executed regarding Runnable2. The benefit of the RTE is, that the Code is the same, whether the communication happens between the Runnable and the Basic Software, or happens between two distinct ECUs . The only part that changes is the _Com_SendSignal()_ and _Com_ReceiveSignal()_ implementation in the Basic Software Layer. Through the high layer of abstraction, the code is independent from the RTE or the Basic Software Implementation and thus highly portable and reusable.
 
 
 # Sender/Receiver Communication**
-
 AUTOSAR distinguishes between three distinct types of Sender/Receiver communication methods, direct communication, buffered communication and queued communication. The Sender/Receiver communication enables the exchange of data. A typical example of this communication is that a sensor measures the current velocity and sends this value to other runnables that do various things with this value.  
 All types of Sender/Receiver communication that get introduced in the following support either 1:n (1 sender, n receivers) or n:1 (n senders, 1 receiver) communication.
 

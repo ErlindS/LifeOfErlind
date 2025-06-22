@@ -26,5 +26,3 @@ A channel group can be called with just one action. This provides a way that gua
 
 **Disadvantages**:
 It requires more work to interpret the values. In some cases it is impossible if it is not clear from where the values are coming.
-
-**Port Driver**:

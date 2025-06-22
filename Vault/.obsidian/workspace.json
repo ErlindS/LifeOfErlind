@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics/Introduction.md",
+                "file": "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/ClientServerPorts.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Introduction"
+              "title": "ClientServerPorts"
             }
           }
         ]
@@ -170,25 +170,41 @@
   },
   "active": "57cf285a98049a2c",
   "lastOpenFiles": [
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/Summary.md",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics/Introduction.md",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Untitled.md",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Untitled 1.md",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/NvBlockSwComponents.md",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/Service Mapping.md",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/Memory Handling.md",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/The MICROSAR Classic Mem Solution.md",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/Principles of Memory Technologies.md",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess/Introduction.md",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/NonVolatileMemoryAccess",
-    "Bildung/Tensorflow/Untitled.md",
-    "Bildung/Autosar/StudyPhase5AUTOSARinPractice",
-    "Bildung/Vectrex/Highscore.md",
-    "Bildung/TreiberentwicklungUnterLinux/28.05.md",
-    "Bildung/TreiberentwicklungUnterLinux/14.05.2025.md",
-    "Bildung/Ideen.md",
-    "Bildung/TreiberentwicklungUnterLinux/deskMate Quickstart for Vector Remote Exercises_CP.pdf",
-    "Bildung/Tensorflow"
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/~$estionsAnswers.docx",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/~WRL0399.tmp",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/~WRD0395.tmp",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/QuestionsAnswers.docx",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/~$estions.docx",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/Questions.docx",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/~WRD3599.tmp",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/DioDriver.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/Port Driver.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/IODriversGeneralCharacteristics.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/Overview.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/ClientServerPorts.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/UnitsDataConstraintsComputationMethods.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/~$estions.docx",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/~WRD0002.tmp",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/Questions.docx",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/QuestionsAnswers.docx",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/DataTypes.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/Definition of an SWC and it's Elements.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/Overview.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Tasks.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Summary & Requirements.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Scalability of the Os.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Os Resources.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Inter OS Application Communicator (IOC).md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Interrupts.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Os Counter.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Alarms.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/ContextSwitch.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/OverviewOfVectorMICROSARClassicOperatingSystem.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARMethodology/SystemConfiguration.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARMethodology/Summary.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARMethodology/Overview.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARMethodology/ECU Description.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARMethodology/ChallengesofUseCases.md",
+    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARBasicSoftware/OperatingSystems.md"
   ]
 }

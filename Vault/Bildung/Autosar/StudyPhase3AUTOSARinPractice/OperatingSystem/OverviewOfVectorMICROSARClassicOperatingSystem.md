@@ -2,7 +2,6 @@
 
 The Os and the Complex Drivers are the only modules without a layered approach. As a result, they can directly access the Microcontroller and the MICROSAR Classic Rte.  
 It is a static operating system, meaning it does not change its behavior during runtime. Additionally, it is fully preemptive, event-triggered and scalable in both functionality and size.
-![[Pasted image 20250418214057.png]]
 
 - *Tasks*: You can find tasks e.g. on your Windows Os too. Just open the task manager and see what tasks are running right now. [[Tasks]]
 - *Context*: Like on your Laptop you might be able to have different things open, like this course and an email program - to use it actively you have to change to this program. This is how you can think of a context switch between different tasks on an ECU too. [[ContextSwitch]]

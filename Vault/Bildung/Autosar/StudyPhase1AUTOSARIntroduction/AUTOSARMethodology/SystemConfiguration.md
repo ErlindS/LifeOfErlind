@@ -1,3 +1,5 @@
 The first step for the OEM is to make design decisions about the system.  
 The memory format of the templates and that of the descriptions are objects of standardization, in order to assure properly functional exchanges of descriptions between an OEM and suppliers. The XML file format is used for this purpose. Further the usage of templates for each of the descriptions make it possible to reuse them in other projects with minimal adjustments.  
 In the next step, the OEM can now split the System Configuration Description in smaller modules and share them with suppliers. The benefit is, that an OEM is not dependent on a single supplier anymore, but rather have a supplier for each ECU.
+
+Sw Component Description, System Constrains Description, ECU Resource Description can be configures with the AUTOSAR System Configuration Editor. With the System (Configuration) Description the AUTOSAR System Configurationn Extractor can create multiple ECU Extracts

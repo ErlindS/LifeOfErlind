@@ -37,3 +37,4 @@ Through this systematic approach, our data element gains its variable type. The 
 Data Type Sets in AUTOSAR allow developers to categorize and group related data types within a software component. They enable the definition of a specific prefix for the data types, promoting code readability, reusability and consistency across the project.
 
 For each SWC, you can define lists of data types that shall share the same prefix.
+

@@ -14,7 +14,6 @@ Setting an alarm to an absolute point means specifying a specific time value in 
 Setting an Alarm to a relative point means defining a time duration reltaive to the current time in the system timer. For example, you can set the alarm to trigger after a specific duration such as 5 seconds from the current time. 
 
 # In which ways can you set an alarm?
-
 - Dynamically over API
 - Statically over configuration. then it can use the AUTOSTART, so no user interaction is needed. 
 # For What purposes can you use an Alarm?

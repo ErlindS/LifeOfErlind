@@ -22,4 +22,5 @@ At this point in time, the assignments of software components to ECUs have not y
 - Component is bound to ECU (constraint for mapping!)
 - Represent dependency on a special sensor or actuator
 ## Composition Component
+
 Logical organization or encapsulation of SWCs and/or Composition

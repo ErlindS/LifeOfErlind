@@ -5,3 +5,6 @@ Each supplier configures this configurator based on his own needs. For example, 
 1. After the successful ECUC generation, the suppliers now have all the information about the used SWCs...
 2. ... is able to generate the actual RTE for this specific ECU ...
 3. ... and generate all the Basic Software Configuration, for example the OS config.
+
+The ECU Configuration consists of the RTE Config, the OS Config, the Basic SW Modules Configs. with multiple generators the RTE.c, OS.c, *.c and MCAL.c are created. 
+With the Compiler and Linker the Software Components, the AUTSAR RTE, THE OS, MACL and the other Basic Software  are created

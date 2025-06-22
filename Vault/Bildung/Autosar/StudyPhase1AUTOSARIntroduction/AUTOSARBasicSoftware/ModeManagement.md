@@ -54,3 +54,5 @@
 
 **Example**
 - Switches the states of tranceiver and controller by translating the network communication mode requests from ComM.
+
+The EcuM, ComM, BswM typically also present their services to the application in the form of service ports. That means you can directly connect to these modules as you would to any other component.
