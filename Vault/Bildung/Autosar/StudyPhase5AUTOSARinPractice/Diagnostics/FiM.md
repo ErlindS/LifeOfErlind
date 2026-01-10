@@ -1,0 +1,5 @@
+FiM uses the FID (Function Identifier). FID represents functionality with an inhibition condition. There is an inhibition condition and if an particular inhibition condition is satisfied,  respective functionality will be stopped from execution. The FID is assigned to an SWC. An event is assigned to the FID. 
+
+The FiM knows which functions are inhibited at the moment. The application has to ask the FiM whether a certain function can be run or not.
+
+FiM either stores the condition for each function identifier (FID) and is triggered by the Dem on occurrence of an event OR the FiM requests the current events state from Dem and evaluates the condition for function identifier on request. Based on the event status, FID's status is derived which will decide whether to execute functionality or not at application.

@@ -196,8 +196,118 @@ AutosarMemory = [
      'Ein Mechanismus zur Synchronisation von BSW- und Anwendungsentwicklung. Beim Top-Down-Ansatz definiert ein SWC einen "Service Need", aus dem das BSW-Konfigurationstool automatisch die passende BSW-Konfiguration ableiten kann.']
 ]
 
+Thematik1 = [
+['Was ist die primäre Aufgabe eines Betriebssystems?', 'Die primäre Aufgabe eines Betriebssystems ist die Abstraktion der Hardware. '],
+
+['Welche Kenntnisse benötigt ein Programmierer einer Anwendung, um auf die Hardware zuzugreifen?', 'Der Programmierer benötigt keine Hardware-Kenntnisse mehr, muss aber das Application Program Interface (API) kennen oder Bibliotheksfunktionen aufrufen. '],
+
+['Was ist der Unterschied zwischen Usermodus (Benutzermodus) und Kernelmodus?', 'Im Kernelmodus läuft die Software privilegiert ab, im Benutzermodus nicht privilegiert. '],
+
+['Welche Einschränkungen ergeben sich im Benutzermodus?', 'Bestimmte Prozessorbefehle sind nicht verfügbar und nur ein Teil des Adressraums ist verfügbar. '],
+
+
+['Was ist ein Prozess (Task)?', 'Ein Prozess ist die Ablaufumgebung eines Programms, die vom Betriebssystem zur Verfügung gestellt wird. Es ist ein Programm zur Laufzeit bzw. die konkrete Instanzierung eines Programms innerhalb eines Rechensystems. '],
+
+['Worum konkurrieren Prozesse miteinander?', 'Prozesse konkurrieren um Betriebsmittel wie Speicherplatz oder Prozessor. '],
+
+
+['Was versteht man unter Prozess-Kontext?', 'Das Betriebssystem verwaltet für jeden Prozess vielfältige Informationen, die als Prozess-Kontext bezeichnet werden. Dazu gehören Programme und Daten des Prozesses sowie die Inhalte aller Hardware-Register. '],
+
+['Was ist Hardware-Kontext?', 'Die Registerinhalte werden als Hardware-Kontext bezeichnet. '],
+
+['Wann wird ein Kontextwechsel (Kontext-Switching) durchgeführt?', 'Wenn der gerade aktive Prozess die CPU verliert, muss ein Kontextwechsel durchgeführt werden. '],
+
+['Was passiert bei einem Kontextwechsel?', 'Der Hardware-Kontext des laufenden Prozesses wird gesichert und der Hardwarekontext des neu aktivierten Prozesses in die Ablaufumgebung geladen. '],
+
+['Wie wird der Adressraum eines Prozesses vom Compiler aufgeteilt?', 'Der Adressraum wird in Codesegment (für ausführbares Programm), Stacksegment (für lokale Variablen und Rücksprungadressen) und Datensegment (für statische/globale Variablen, dynamisch allokierte im Heap) aufgeteilt. '],
+
+['Wo werden Rücksprungadressen abgelegt, wenn ein Prozess Kernelcode ausführt (Systemcall)?', 'Die für den Prozess relevanten Rücksprungadressen werden in einem Kernelstack abgelegt. '],
+
+['Wofür ist die MMU zuständig?', 'Die MMU ist zuständig für die Berechnung der physikalischen Adressen. '],
+
+['Was ist ein Prozesskontrollblock (PCB) oder Taskkontrolblock (TCB)?', 'Jedem Prozess ist ein Eintrag in der Prozesstabelle des Betriebssystems zugeordnet, der als Prozesskontrollblock (PCB) oder Taskkontrolblock (TCB) bezeichnet wird. '],
+
+['Welche Informationen enthält ein PCB?', 'Der PCB enthält Informationen über zugeordnetes Code-, Daten- und Stacksegment, den Speicherort des gesamten Prozesskontextes, Prozesszustand, Prozesspriorität und Prozessidentifikationsnummer (PID). '],
+
+['Was ist die PPID?', 'Die PPID (parent process identification) ist die Information über den erzeugenden Prozess. '],
+
+['Welche PID hat der Init-Prozess in einem Unix-System?', 'Der Init-Prozess hat die PID 1. '],
+
+['Was sind Threads (Fäden)?', 'Threads sind ressourcenschonende, leichtgewichtige Prozesse (LWP = light-weight process). '],
+
+['Was teilen sich alle Threads eines Prozesses?', 'Alle Threads eines Prozesses teilen sich den gemeinsamen Adressraum (Code- und Datensegment) sowie Zugriff auf offene Dateien und Netzwerkverbindungen des Prozesses. '],
+
+['Was haben Threads eigenes?', 'Sie haben ein eigenes Stacksegment für lokale Variablen und einen eigenen Threadkontext. '],
+
+['Wie wird ein Prozess erzeugt?', 'Ein Prozess wird durch einen Systemcall erzeugt (z. B. fork bei Linux). '],
+
+['Was sind die wichtigsten Prozesszustände?', 'Die wichtigsten Prozesszustände sind "Aktiv", "Bereit" und "Blockiert". '],
+
+['Welche zusätzlichen Prozesszustände gibt es in Linux beim Schlafen (Blockiert)?', 'In Linux wird beim Schlafen zwischen "unterbrechbar" (INTERRUPTIBLE) und "nicht-unterbrechbar" (UNINTERRUPTIBLE) unterschieden. '],
+
+['Was ist IPC?', 'IPC steht für Inter Process Communication und bezeichnet Mechanismen zur Kommunikation zwischen einzelnen Prozessen, die vom Betriebssystem zur Verfügung gestellt werden. '],
+
+['Was bedeutet Nebenläufigkeit von Prozessen?', 'Nebenläufigkeit bedeutet, dass mehrere Prozesse quasi gleichzeitig ablaufen, indem sie gleichzeitig aktiv sind und von Zeit zu Zeit die CPU entzogen wird. '],
+
+['Was ist eine Race-Condition?', 'Eine Race-Condition (Wettlaufsituation) tritt auf, wenn zwei Prozesse auf gleiche Ressourcen zugreifen und das Ergebnis vom Zufall abhängt, da ein Prozess unterbrochen und vom anderen überholt werden kann. '],
+
+['Was ist virtueller Speicher?', 'Der virtuelle Speicher ist der vom tatsächlich vorhandenen Arbeitsspeicher unabhängige Adressraum, der einem Prozess vom Betriebssystem zur Verfügung gestellt wird. '],
+
+['Wer entwickelte das Konzept des virtuellen Speichers und wann?', 'Das Konzept des virtuellen Speichers wurde 1956 vom Physiker Fritz Rudolf Güntsch an der Technischen Universität Berlin entwickelt. '],
+
+['Was ist der Unterschied zwischen virtuellen und physikalischen Adressen?', 'Virtuelle Adressen sind für den Programmierer sichtbar, während physikalische (oder physische) Adressen an den Systembus angelegt und an den Speicher übermittelt werden. '],
+
+['Wie werden die Speicherbereiche des virtuellen und realen Adressraums bei der Adresszuordnung bezeichnet?', 'Die Blöcke des virtuellen Adressraums werden als Seiten (Pages) und die des realen Adressraums als Seitenrahmen (Page Frames, Frames, Kacheln oder Rahmen) bezeichnet. '],
+
+
+['Warum ist eine ausgewogene Größe der Seiten bzw. Seitenrahmen wichtig?', 'Bei zu kleinen Seitenrahmen sind mehr Ein-/Ausgabeoperationen erforderlich, und bei zu großen Seiten wird Speicherplatz verschwendet. '],
+
+['Welche typische Seitengröße wurde in vielen 32-Bit-Prozessoren gewählt?', 'Eine Größe von 4 kByte wurde typischerweise gewählt, aber auch andere Größen sind vorzufinden. '],
+
+['Was ist die Aufgabe der MMU bei der Adressübersetzung?', 'Das Mapping (Abbildung) von virtuellen Adressen auf reale Adressen ist die Aufgabe der MMU (Memory Management Unit). '],
+
+['Was ist ein Systemcall?', 'Ein Systemcall ist ein Dienstaufruf an das Betriebssystem, bei dessen Ausführung in den Kernelmodus gewechselt wird. '],
+
+['Welche Bibliothek stellt Unix und Linux für Systemaufrufe bereit?', 'Unix und Linux stellen hierfür eine Bibliothek bereit, die meist als C-Library oder clib bezeichnet wird. '],
+
+['Nenne Beispiele für typische Systemaufrufe unter Linux.', 'Beispiele sind fork (Prozesserzeugung), exit (Prozess beenden), open (Datei öffnen), close (Datei schließen), read (Datei lesen), write (Datei schreiben). '],
+
+['Was ist ein Trap im Kontext von Systemcalls?', 'Ein Trap ist ein Software-Interrupt, der einen Übergang vom Benutzermodus in den Kernelmodus bewirkt, um den aufgerufenen Systemdienst auszuführen. '],
+
+['Was passiert bei der Ausführung eines Systemcalls über einen Software-Interrupt?', 'Der aktuelle Kontext des laufenden Programms wird gesichert, der Program Counter wird mit der Adresse der passenden Systemroutine belegt, vom Benutzermodus wird in den Kernelmodus geschaltet, die Systemroutine wird durchlaufen, und anschließend wird der alte Kontext wiederhergestellt. '],
+
+
+['Was ist der Vorteil des Trap-Mechanismus bei Systemcalls?', 'Der Trap-Mechanismus ermöglicht den Aufruf eines Systemcalls aus einem Anwendungsprogramm, ohne dass die tatsächliche Adresse der Systemroutine bekannt sein muss (Information Hiding). Es wird nur eine Nummer der gewünschten Funktion als Parameter übergeben. '],
+
+['Was bilden alle Systemcalls zusammen?', 'Alle Systemcalls zusammen bilden die Schnittstelle der Anwendungsprogramme zum Betriebssystemkern (Kernel). '],
+
+['Sind Systemcalls schnell oder langsam im Vergleich zu normalen Funktionsaufrufen?', 'Ein Systemcall ist viel langsamer als ein Funktionsaufruf (Einige 100 bis 1000 Takte statt weniger als 10 Takte). '],
+
+['Was ist I/O-Management?', 'Die Geräteverwaltung, auch Ein- und Ausgabeverwaltung oder I/O-Management genannt, dient als Teil des Betriebssystems der optimierten Verwaltung von externen Geräten zur Ein- und Ausgabe. '],
+
+['Was sind die Hauptaufgaben des I/O-Managements?', 'Die Hauptaufgaben sind: ein Interface zur systemkonformen Integration von Hardware zur Verfügung stellen, eine einheitliche Programmierschnittstelle für den Zugriff auf die Peripherie bereitstellen und Ordnungsstrukturen für Daten in Form von Verzeichnissen und Dateien über Dateisysteme realisieren. '],
+
+['Was ist ein Gerätetreiber?', 'Ein Gerätetreiber ist Kernel-Code, der spezifisch für ein bestimmtes Gerät entwickelt wurde. '],
+
+['Welche drei Geräteklassen werden bei Linux unterschieden?', 'Linux unterscheidet Zeichengeräte (char devices), Blockgeräte (block devices) und Netzwerkschnittstellen (networking devices). '],
+
+['Was ist der Unterschied zwischen Zeichen- und Blockgeräten?', 'Der Unterschied liegt in der Verwaltung der Daten im Kernel. '],
+
+['Können Netzwerkschnittstellen über eine Datei angesprochen werden?', 'Nein, Netzwerkschnittstellen unterscheiden sich komplett zu Zeichen- und Blockgeräten und können nicht über eine Datei angesprochen werden. '],
+
+['Was ist das Modulkonzept bei Linux?', 'Das Modulkonzept ermöglicht es, neu erstellten Kernelcode zur Laufzeit des Kernels hinzuzufügen und wieder zu entfernen, wodurch das Neulinken und Neustarten des Kernels bei jeder neuen Treiberversion vermieden wird. '],
+
+['Was sind Built-in-Treiber oder Kerneltreiber?', 'Built-in-Treiber sind Gerätetreiber, die integraler Bestandteil des Betriebssystemkerns sind und zusammen mit dem Kernel compiliert werden. '],
+
+['Was ist der Hauptunterschied zwischen Built-in-Treibern und Modul-Treibern?', 'Built-in-Treiber sind fest im Kernel verankert, während Modul-Treiber zur Laufzeit des Kernels geladen und entladen werden können. '],
+
+['Kann man vom Userspace auf die In-Kernel API zugreifen?', 'Nein, die In-Kernel API ist nicht an das System-Call-Interface angebunden und daher vom Userspace aus nicht erreichbar. ']
+
+
+]
+
 # Du kannst diese Liste nun kopieren. Jede Karte ist jetzt eine Liste mit zwei Elementen:
 # dem Text für die Vorderseite und dem Text für die Rückseite.
 # print(cards) # Optional: Zum Anzeigen der Karten
 
-erstelle_anki_karten(AutosarMemory, "AutosarMemory")
+erstelle_anki_karten(Thematik1, "Thematik1")

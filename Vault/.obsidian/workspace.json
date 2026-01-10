@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/ClientServerPorts.md",
+                "file": "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Scalability of the Os.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ClientServerPorts"
+              "title": "Scalability of the Os"
             }
           }
         ]
@@ -160,6 +160,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -170,6 +171,25 @@
   },
   "active": "57cf285a98049a2c",
   "lastOpenFiles": [
+    "Bildung/Autosar/StudyPhase4AUTOSARinPractice/ModeManagement/ComMandNM.md",
+    "Untitled.canvas",
+    "Gedichte/Gedicht1.md",
+    "Musik/Gitarre/Überblick.md",
+    "Musik/Gitarre/LegendsNeverDie.md",
+    "Musik/Alben/Soul über Ego.md",
+    "Musik/Alben/GAMEBOY.md",
+    "Bildung/Vectrex/Notes.md",
+    "Bildung/Vectrex/Highscore.md",
+    "Bildung/Vectrex/GameConcept.md",
+    "Bildung/Vectrex/Debugging.md",
+    "Bildung/Autosar/StudyPhase4AUTOSARinPractice/Communication/TransmissionModes.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics/FiM.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics/DEM.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics/DCM.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics/CanTp.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics/ISOStandards.md",
+    "Bildung/Autosar/StudyPhase5AUTOSARinPractice/Diagnostics/Introduction.md",
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/ClientServerPorts.md",
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/~$estionsAnswers.docx",
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/~WRL0399.tmp",
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/~WRD0395.tmp",
@@ -181,30 +201,12 @@
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/Port Driver.md",
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/IODriversGeneralCharacteristics.md",
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/Overview.md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/InputOutput/ClientServerPorts.md",
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/UnitsDataConstraintsComputationMethods.md",
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/~$estions.docx",
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/~WRD0002.tmp",
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/Questions.docx",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/QuestionsAnswers.docx",
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/DataTypes.md",
     "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/Definition of an SWC and it's Elements.md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/Overview.md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Tasks.md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Summary & Requirements.md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Scalability of the Os.md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Os Resources.md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Inter OS Application Communicator (IOC).md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Interrupts.md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Os Counter.md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/Alarms.md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/ContextSwitch.md",
-    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/OperatingSystem/OverviewOfVectorMICROSARClassicOperatingSystem.md",
-    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARMethodology/SystemConfiguration.md",
-    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARMethodology/Summary.md",
-    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARMethodology/Overview.md",
-    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARMethodology/ECU Description.md",
-    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARMethodology/ChallengesofUseCases.md",
-    "Bildung/Autosar/StudyPhase1AUTOSARIntroduction/AUTOSARBasicSoftware/OperatingSystems.md"
+    "Bildung/Autosar/StudyPhase3AUTOSARinPractice/SoftwareComponents/Overview.md"
   ]
 }
