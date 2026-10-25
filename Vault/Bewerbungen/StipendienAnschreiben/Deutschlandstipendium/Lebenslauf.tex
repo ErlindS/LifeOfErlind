@@ -1,0 +1,161 @@
+% !TeX program = lualatex
+% Lebenslauf – Erlind Sejdiu
+% Kompilieren mit:  lualatex lebenslauf.tex
+
+\documentclass[a4paper,10pt]{article}
+
+% ─── Pakete ──────────────────────────────────────────────────────────────────
+\usepackage{fontspec}
+\usepackage[ngerman]{babel}
+\usepackage[left=2.1cm, right=2.1cm, top=1.4cm, bottom=1.0cm]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+% ─── Schrift ─────────────────────────────────────────────────────────────────
+% Pagella ist eine ruhige Serifenschrift und in jeder TeX-Live-Installation dabei.
+\setmainfont{TeX Gyre Pagella}
+
+% ─── Farben: nur Schwarz und zwei Grautöne ───────────────────────────────────
+\definecolor{ink}{HTML}{1C1C1C}
+\definecolor{muted}{HTML}{6E6E6E}
+\definecolor{hairline}{HTML}{C4C4C4}
+\color{ink}
+
+\hypersetup{pdfauthor={Erlind Sejdiu}, pdftitle={Lebenslauf -- Erlind Sejdiu}}
+
+% ─── Überschriften: Kapitälchen statt Versalien und Farbbalken ───────────────
+\titleformat{\section}
+    {\normalsize\scshape\color{ink}}{}{0em}{}
+    [\vspace{-0.65em}\textcolor{hairline}{\rule{\linewidth}{0.4pt}}]
+\titlespacing*{\section}{0pt}{0.7em}{0.4em}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ─── Breite der Datumsspalte ─────────────────────────────────────────────────
+\newlength{\datecol}\setlength{\datecol}{3.8cm}
+
+% \eintrag{Zeitraum}{Position}{Institution}
+\newcommand{\eintrag}[3]{%
+    \noindent
+    \begin{tabularx}{\textwidth}{@{}p{\datecol}@{}X@{}}
+        \textcolor{muted}{#1} & \textbf{#2}\ifx\relax#3\relax\else, #3\fi
+    \end{tabularx}%
+    \par\nobreak
+}
+
+% \block{Zeitraum}{Titel}{Fließtext}  – kompakte Form ohne Aufzählung
+\newcommand{\block}[3]{%
+    \noindent
+    \begin{tabularx}{\textwidth}{@{}p{\datecol}@{}X@{}}
+        \textcolor{muted}{#1} & \textbf{#2}\par #3
+    \end{tabularx}\vspace{0.2em}%
+}
+
+% Aufzählung unterhalb eines Eintrags, bündig zur rechten Spalte
+\newenvironment{details}
+    {\begin{itemize}[leftmargin=\dimexpr\datecol+0.9em\relax, labelsep=0.5em,
+                     labelindent=\datecol, topsep=0.15em, itemsep=0.1em,
+                     parsep=0pt, label=\textcolor{hairline}{\textbf{\textperiodcentered}}]}
+    {\end{itemize}\vspace{0.2em}}
+
+\pagestyle{empty}
+
+% =============================================================================
+\begin{document}
+
+% ─── Kopf ────────────────────────────────────────────────────────────────────
+{\LARGE Erlind Sejdiu}\\[0.35em]
+{\small\color{muted}
+Blücherstraße 18, Karlsruhe \enspace\textbar\enspace
+0157\,3547\,4746 \enspace\textbar\enspace
+\href{mailto:erlindamprogrammieren@gmail.com}{erlindamprogrammieren@gmail.com}}\\[0.45em]
+\textcolor{hairline}{\rule{\linewidth}{0.7pt}}
+
+\vspace{0.5em}
+
+% Kurzprofil – gern anpassen oder streichen
+{\small Masterstudent der Informatik mit Schwerpunkt Software Engineering. Erfahrung in
+maschinennaher Entwicklung mit C++ und C, im Embedded- und Automotive-Umfeld sowie in der
+industriellen Betriebsdatenerfassung.}
+
+% ─── Bildung ─────────────────────────────────────────────────────────────────
+\section{Bildung}
+
+\eintrag{seit 3/2026}{M.\,Sc.\ Informatik}{Hochschule Karlsruhe}
+\begin{details}
+    \item Schwerpunkt Software Engineering, Notendurchschnitt nach dem 1.~Semester 1,0
+\end{details}
+
+\eintrag{10/2022 -- 02/2026}{B.\,Sc.\ Technische Informatik}{Hochschule Pforzheim \normalfont(Abschlussnote 1,3)}
+\begin{details}
+    \item Bachelorarbeit bei der ProSeS GmbH (Note 1,0): \glqq Refactoring des Benachrichtigungs\-moduls
+          zur Optimierung eines Betriebsdatenerfassungssystems\grqq
+\end{details}
+
+% ─── Berufserfahrung ─────────────────────────────────────────────────────────
+\section{Berufserfahrung}
+
+% TODO: genauen Monat des Beginns eintragen
+\eintrag{seit 09/2025}{Werkstudent}{ProSeS GmbH}
+\begin{details}
+    \item Weiterentwicklung eines Systems zur Betriebsdatenerfassung
+    \item Refactoring des Benachrichtigungsmoduls, Absicherung durch Unit-Tests
+\end{details}
+
+\eintrag{09/2024 -- 02/2025}{Praxissemester, R\&D Embedded Systems}{Vector Informatik GmbH}
+\begin{details}
+    \item Evaluation von Technologien und Standards im Automotive-Umfeld
+    \item Aufbau und Programmierung eines Proof of Concept auf einem Automotive-Switch
+\end{details}
+
+\eintrag{07/2023 -- 02/2024}{Werkstudent Cybersecurity}{Codewerk GmbH}
+\begin{details}
+    \item Entwicklung eines GUI-Fuzzers auf Basis von Radamsa
+    \item Auswertung in Kibana-Dashboards, Containerisierung mit Docker Compose
+\end{details}
+
+\eintrag{02/2023 -- 06/2023,\newline 02/2025 -- 08/2025}{Wissenschaftliche Hilfskraft}{Hochschule Pforzheim}
+\begin{details}
+    \item Betreuung der Labore Softwareentwicklung und Software Engineering\,2
+    \item Unterstützung bei Programmieraufgaben und beim Schreiben von Software-Tests
+\end{details}
+
+% ─── Projekte ────────────────────────────────────────────────────────────────
+\section{Projekte}
+
+\block{}{Aktienmarkt-Analysetool}
+    {Simulation von Kursverläufen und automatisiertes Auffinden geeigneter Handelsalgorithmen.}
+
+\block{}{Spieleanwendung für die Vectrex-Konsole}
+    {Gehirntrainingsspiel in C für eine Retro-Konsole mit engem Speicher- und Rechenbudget.}
+
+\block{}{Conway's Game of Life mit C++-Templates}
+    {Umsetzung mittels Template-Metaprogrammierung, vollständig zur Compile-Zeit berechnet.}
+
+% ─── Engagement ──────────────────────────────────────────────────────────────
+\section{Ehrenamtliches Engagement}
+
+\block{}{Fachschaft Technik, Hochschule Pforzheim}
+    {Organisation und Planung von Veranstaltungen für Studierende der Fakultät Technik.}
+
+\block{}{Studierendenrat, Hochschule Pforzheim}
+    {Vertretung studentischer Interessen, Mitorganisation hochschulweiter Veranstaltungen.}
+
+% ─── Kenntnisse ──────────────────────────────────────────────────────────────
+\section{Kenntnisse}
+
+\begin{tabularx}{\textwidth}{@{}p{\datecol}@{}X@{}}
+    \textcolor{muted}{Programmierung} & C++, C, Python, C\#, MATLAB, Bash, VHDL \\[0.15em]
+    \textcolor{muted}{Werkzeuge}      & Git, CMake, Make, GoogleTest, Docker, Visual Studio, LTspice \\[0.15em]
+    \textcolor{muted}{Sprachen}       & Deutsch (Muttersprache), Englisch (verhandlungssicher) \\
+\end{tabularx}
+
+% ─── Ort und Datum ───────────────────────────────────────────────────────────
+\vfill
+
+\end{document}
