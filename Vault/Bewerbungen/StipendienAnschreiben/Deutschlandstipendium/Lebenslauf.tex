@@ -16,8 +16,14 @@
 \usepackage[hidelinks]{hyperref}
 
 % ─── Schrift ─────────────────────────────────────────────────────────────────
-% Pagella ist eine ruhige Serifenschrift und in jeder TeX-Live-Installation dabei.
-\setmainfont{TeX Gyre Pagella}
+% TeX Gyre Pagella per Dateinamen laden (funktioniert plattformübergreifend in TeX Live & MiKTeX)
+\setmainfont{texgyrepagella}[
+    Extension = .otf,
+    UprightFont = *-regular,
+    BoldFont = *-bold,
+    ItalicFont = *-italic,
+    BoldItalicFont = *-bolditalic
+]
 
 % ─── Farben: nur Schwarz und zwei Grautöne ───────────────────────────────────
 \definecolor{ink}{HTML}{1C1C1C}
@@ -29,7 +35,7 @@
 
 % ─── Überschriften: Kapitälchen statt Versalien und Farbbalken ───────────────
 \titleformat{\section}
-    {\normalsize\scshape\color{ink}}{}{0em}{}
+    {\LARGE\scshape\color{ink}}{}{0em}{}
     [\vspace{-0.65em}\textcolor{hairline}{\rule{\linewidth}{0.4pt}}]
 \titlespacing*{\section}{0pt}{0.7em}{0.4em}
 
@@ -48,12 +54,16 @@
     \par\nobreak
 }
 
-% \block{Zeitraum}{Titel}{Fließtext}  – kompakte Form ohne Aufzählung
+% \block{Zeitraum}{Titel}{Fließtext} – falls kein Zeitraum angegeben, volle Breite
 \newcommand{\block}[3]{%
     \noindent
-    \begin{tabularx}{\textwidth}{@{}p{\datecol}@{}X@{}}
-        \textcolor{muted}{#1} & \textbf{#2}\par #3
-    \end{tabularx}\vspace{0.2em}%
+    \ifx\relax#1\relax
+        \textbf{#2}\par #3\par\vspace{0.35em}%
+    \else
+        \begin{tabularx}{\textwidth}{@{}p{\datecol}@{}X@{}}
+            \textcolor{muted}{#1} & \textbf{#2}\par #3
+        \end{tabularx}\vspace{0.2em}%
+    \fi
 }
 
 % Aufzählung unterhalb eines Eintrags, bündig zur rechten Spalte
@@ -69,7 +79,7 @@
 \begin{document}
 
 % ─── Kopf ────────────────────────────────────────────────────────────────────
-{\LARGE Erlind Sejdiu}\\[0.35em]
+{\huge Erlind Sejdiu}\\[0.35em]
 {\small\color{muted}
 Blücherstraße 18, Karlsruhe \enspace\textbar\enspace
 0157\,3547\,4746 \enspace\textbar\enspace
@@ -77,11 +87,6 @@ Blücherstraße 18, Karlsruhe \enspace\textbar\enspace
 \textcolor{hairline}{\rule{\linewidth}{0.7pt}}
 
 \vspace{0.5em}
-
-% Kurzprofil – gern anpassen oder streichen
-{\small Masterstudent der Informatik mit Schwerpunkt Software Engineering. Erfahrung in
-maschinennaher Entwicklung mit C++ und C, im Embedded- und Automotive-Umfeld sowie in der
-industriellen Betriebsdatenerfassung.}
 
 % ─── Bildung ─────────────────────────────────────────────────────────────────
 \section{Bildung}
@@ -119,7 +124,7 @@ industriellen Betriebsdatenerfassung.}
     \item Auswertung in Kibana-Dashboards, Containerisierung mit Docker Compose
 \end{details}
 
-\eintrag{02/2023 -- 06/2023,\newline 02/2025 -- 08/2025}{Wissenschaftliche Hilfskraft}{Hochschule Pforzheim}
+\eintrag{02/2023 -- 06/2023,\newline 02/2025 -- 08/2025}{Wissenschaftliche Hilfskraft}{Hochschule Pforzheim\newline \normalfont Tutor für Softwareentwicklung und Software Engineering}
 \begin{details}
     \item Betreuung der Labore Softwareentwicklung und Software Engineering\,2
     \item Unterstützung bei Programmieraufgaben und beim Schreiben von Software-Tests
@@ -131,19 +136,19 @@ industriellen Betriebsdatenerfassung.}
 \block{}{Aktienmarkt-Analysetool}
     {Simulation von Kursverläufen und automatisiertes Auffinden geeigneter Handelsalgorithmen.}
 
-\block{}{Spieleanwendung für die Vectrex-Konsole}
-    {Gehirntrainingsspiel in C für eine Retro-Konsole mit engem Speicher- und Rechenbudget.}
+\block{}{Projekt-Management Applikation}
+    {Dediziertes Werkzeug zur Planung des Alltags und paralleler Projekte, exakt auf persönliche Anforderungen zugeschnitten.}
 
-\block{}{Conway's Game of Life mit C++-Templates}
-    {Umsetzung mittels Template-Metaprogrammierung, vollständig zur Compile-Zeit berechnet.}
+\block{}{Movelink -- Bewegungsanalyse-Tool}
+    {Ein IMU-basiertes Analysetool zur Erkennung und Vorhersage von Bewegungsmustern.}
 
 % ─── Engagement ──────────────────────────────────────────────────────────────
 \section{Ehrenamtliches Engagement}
 
-\block{}{Fachschaft Technik, Hochschule Pforzheim}
+\block{2023 -- 2025}{Fachschaft Technik, Hochschule Pforzheim}
     {Organisation und Planung von Veranstaltungen für Studierende der Fakultät Technik.}
 
-\block{}{Studierendenrat, Hochschule Pforzheim}
+\block{2023 -- 2024}{Studierendenrat, Hochschule Pforzheim}
     {Vertretung studentischer Interessen, Mitorganisation hochschulweiter Veranstaltungen.}
 
 % ─── Kenntnisse ──────────────────────────────────────────────────────────────

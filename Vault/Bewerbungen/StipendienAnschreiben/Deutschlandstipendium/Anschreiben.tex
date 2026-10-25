@@ -13,7 +13,15 @@
 \usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
 
-\setmainfont{TeX Gyre Pagella}
+% ─── Schrift ─────────────────────────────────────────────────────────────────
+% TeX Gyre Pagella per Dateinamen laden (funktioniert plattformübergreifend in TeX Live & MiKTeX)
+\setmainfont{texgyrepagella}[
+    Extension = .otf,
+    UprightFont = *-regular,
+    BoldFont = *-bold,
+    ItalicFont = *-italic,
+    BoldItalicFont = *-bolditalic
+]
 
 \definecolor{ink}{HTML}{1C1C1C}
 \definecolor{muted}{HTML}{6E6E6E}
