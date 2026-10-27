@@ -1,20 +1,20 @@
 % !TeX program = lualatex
-% Motivationsschreiben Deutschlandstipendium – Erlind Sejdiu
-% Kompilieren mit:  lualatex anschreiben.tex
-% Layout bewusst identisch zum Lebenslauf (gleiche Schrift, gleicher Kopf).
+% Bewerbung Masterthesis – Erlind Sejdiu
+% Kompilieren mit:  lualatex Anschreiben.tex
+% Layout bewusst abgestimmt auf den Lebenslauf (gleiche Typografie & Farbpalette).
 
 \documentclass[a4paper,11pt]{article}
 
 % ─── Pakete ──────────────────────────────────────────────────────────────────
 \usepackage{fontspec}
 \usepackage[ngerman]{babel}
-\usepackage[left=2.4cm, right=2.4cm, top=1.8cm, bottom=1.6cm]{geometry}
+\usepackage[left=2.2cm, right=2.2cm, top=1.4cm, bottom=1.4cm]{geometry}
 \usepackage{microtype}
+\usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
 
 % ─── Schrift ─────────────────────────────────────────────────────────────────
-% TeX Gyre Pagella per Dateinamen laden (funktioniert plattformübergreifend in TeX Live & MiKTeX)
 \setmainfont{texgyrepagella}[
     Extension = .otf,
     UprightFont = *-regular,
@@ -29,58 +29,57 @@
 \color{ink}
 
 \hypersetup{pdfauthor={Erlind Sejdiu},
-            pdftitle={Motivationsschreiben -- Deutschlandstipendium}}
+            pdftitle={Bewerbung Masterthesis -- Erlind Sejdiu}}
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.75em}
+\setlength{\parskip}{0.5em}
 \pagestyle{empty}
 
 % =============================================================================
 \begin{document}
 
 % ─── Kopf (identisch zum Lebenslauf) ─────────────────────────────────────────
-{\LARGE Erlind Sejdiu}\\[0.35em]
+{\LARGE Erlind Sejdiu}\\[0.3em]
 {\small\color{muted}
 Blücherstraße 18, Karlsruhe \enspace\textbar\enspace
 0157\,3547\,4746 \enspace\textbar\enspace
-\href{mailto:erlindamprogrammieren@gmail.com}{erlindamprogrammieren@gmail.com}}\\[0.45em]
+\href{mailto:erlindamprogrammieren@gmail.com}{erlindamprogrammieren@gmail.com}}\\[0.4em]
 \textcolor{hairline}{\rule{\linewidth}{0.7pt}}
-
-\vspace{1.4em}
-
-% ─── Empfänger ───────────────────────────────────────────────────────────────
-{\parskip=0pt
-Hochschule Karlsruhe\\
-Stipendienkommission Deutschlandstipendium\\
-Moltkestraße 30\\
-76133 Karlsruhe\par}
-
-\vspace{1.6em}
-
-{\raggedleft\color{muted} Karlsruhe, \today \par}
-
-\vspace{1.2em}
-
-% TODO: Semester prüfen und ggf. anpassen
-\textbf{Bewerbung um ein Deutschlandstipendium zum Wintersemester 2026/27}
 
 \vspace{0.8em}
 
-Sehr geehrte Damen und Herren,
+\vspace{1.1em}
 
-seit März 2026 studiere ich Informatik im Master an der Hochschule Karlsruhe. Mein erstes Semester habe ich mit der Note 1,0 abgeschlossen. Bisher habe ich mein Studium komplett selbst finanziert. Ich arbeite als Werkstudent bei der ProSeS GmbH und betreibe nebenher eine GbR für Gartenarbeit, die ich mitgegründet habe. Das bringt mir viel Praxiserfahrung, kostet aber auch Zeit. Das Deutschlandstipendium würde mir helfen, etwas weniger zu arbeiten und mehr Zeit in mein Studium und eigene Projekte zu stecken.
+% ─── Betreffzeile ────────────────────────────────────────────────────────────
+{\large\textbf{Initiativbewerbung für eine Masterthesis im Bereich Software Engineering}}\\[0.15em]
+{\small\color{muted}Möglicher Beginn: Sommersemester 2027 (oder nach Absprache)}
 
-Am meisten begeistert mich die Entwicklung nah an der Hardware, wo es wirklich auf Speicher und schnelle Laufzeiten ankommt. Meinen Bachelor in Technischer Informatik an der Hochschule Pforzheim habe ich mit der Note 1,3 gemacht. In meiner Bachelorarbeit mit der Note 1,0 bei ProSeS ging es um das Refactoring eines Benachrichtigungsmoduls. Im Praxissemester bei Vector Informatik habe ich an Software für einen Automotive Switch gearbeitet und bei Codewerk einen GUI Fuzzer für Cybersecurity entwickelt.
+\vspace{0.5em}
 
-Neben dem Studium packe ich gerne mit an. Als Hilfskraft an der Hochschule habe ich anderen Studierenden bei Programmieraufgaben und Tests geholfen. In der Fachschaft und im Studierendenrat habe ich Events organisiert und mich für die Interessen der Studierenden eingesetzt. Auch die Arbeit in unserer GbR bringt mir viel. Dort habe ich gelernt, Verantwortung zu übernehmen, Kunden zu betreuen und mich auf mein Team zu verlassen.
+% ─── Anschreiben ─────────────────────────────────────────────────────────────
+Sehr geehrte Damen und Herren,% Falls Ansprechpartner bekannt: Sehr geehrte(r) Frau/Herr <Name>,
 
-Mit dem Stipendium könnte ich Arbeitszeit direkt in Zeit für Vorlesungen und eigene Projekte tauschen. Gerade bei Projekten an der Schnittstelle von Hardware und Software fehlen oft die Stunden. Über die Förderung an der Hochschule Karlsruhe würde ich mich sehr freuen.
+\textbf{Hier nennen wer du bist und wie du auf das Unternehmen aufmerksam geworden bist}
+aktuell studiere ich Informatik im Master an der Hochschule Karlsruhe mit dem Schwerpunkt Software Engineering (aktueller Notenschnitt 1,0). Im Rahmen meines Studiums möchte ich meine Masterthesis an der Schnittstelle zwischen fundierter wissenschaftlicher Konzeption und konkreter industrieller Praxis durchführen. Die technologische Ausrichtung und der hohe Qualitätsanspruch Ihres Hauses im Bereich <konkreter Bereich / z.\,B. verteilte Systeme, moderne Cloud-Architekturen, Industrieautomation> bieten dafür das ideale Umfeld.
 
-\vspace{1.2em}
+\textbf{Hier nimmst du die Stellenbeschreibung und die Anforderung daraus und versuchst mitzuteilen, dass das auch deine stärken sind}
+Mein fachlicher Fokus liegt in der konzeptionellen Softwareentwicklung und modernen Software-Architektur. Mich begeistert die Frage, wie sich skalierbare, wartungsarme und zukunftssichere Systeme gestalten lassen. Praktische Erfahrungen bringe ich sowohl aus der Entwicklung eigener Architekturprojekte (etwa einer modularen Projektmanagement-Lösung im modernen .NET-Ökosystem mit OpenTelemetry-Instrumentierung) als auch aus meiner bisherigen industriellen Tätigkeit mit: So konnte ich bereits in meiner Bachelorarbeit (Note 1,0) sowie als Werkstudent gewachsene Softwaresysteme erfolgreich analysieren, refaktorisieren und durch automatisierte Tests stabilisieren. Fortgeschrittene Sprachfeatures, Metaprogrammierung und moderne Entwurfsmuster setze ich dabei gezielt ein, um wartbaren und performanten Code zu schaffen.
+
+
+
+\textbf{Du musst für die Leute denken und ihnen schon Gedanken in den Kopf setzen wie man dich theoretisch einsetzen könnte (Abhängig von der Stellenbeschreibung)}
+Für eine gemeinsame Masterthesis sehe ich insbesondere in drei Themenfeldern einen unmittelbaren Mehrwert für Ihr Team.
+\textbf{Architekturmodernisierung \& Refactoring:} Wissenschaftlich fundierte Neukonzeption und Entkopplung gewachsener Komponenten zur Reduktion technischer Schulden.
+\textbf{Prototyping innovativer Features:} Konzeption und prototypische Umsetzung zukunftsweisender Funktionen, für die im regulären Sprint-Alltag häufig Ressourcen fehlen.
+\textbf{Qualität, Observability \& Robustheit:} Durchgängige Integration von Telemetrie (z.\,B. OpenTelemetry), Schärfung von Sicherheitsaspekten oder Aufbau automatisierter Teststrategien.
+
+Über die Gelegenheit, mich und meine Motivation in einem persönlichen Gespräch vorzustellen, freue ich mich sehr.
+
+\vspace{0.6em}
 
 Mit freundlichen Grüßen
 
-\vspace{2.0em}
+\vspace{1.5em}
 
 Erlind Sejdiu
 

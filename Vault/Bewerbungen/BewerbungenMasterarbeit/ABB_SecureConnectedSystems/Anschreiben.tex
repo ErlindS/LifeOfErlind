@@ -1,0 +1,79 @@
+% !TeX program = lualatex
+% Bewerbung Masterthesis ABB Forschungszentrum Deutschland – Erlind Sejdiu
+% Team: Secure Connected Systems
+% Kompilieren mit:  lualatex Anschreiben.tex
+
+\documentclass[a4paper,11pt]{article}
+
+% ─── Pakete ──────────────────────────────────────────────────────────────────
+\usepackage{fontspec}
+\usepackage[ngerman]{babel}
+\usepackage[left=2.2cm, right=2.2cm, top=1.4cm, bottom=1.4cm]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+% ─── Schrift ─────────────────────────────────────────────────────────────────
+\setmainfont{texgyrepagella}[
+    Extension = .otf,
+    UprightFont = *-regular,
+    BoldFont = *-bold,
+    ItalicFont = *-italic,
+    BoldItalicFont = *-bolditalic
+]
+
+\definecolor{ink}{HTML}{1C1C1C}
+\definecolor{muted}{HTML}{6E6E6E}
+\definecolor{hairline}{HTML}{C4C4C4}
+\color{ink}
+
+\hypersetup{pdfauthor={Erlind Sejdiu},
+            pdftitle={Bewerbung Masterthesis Secure Connected Systems -- Erlind Sejdiu}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\pagestyle{empty}
+
+% =============================================================================
+\begin{document}
+
+% ─── Kopf (identisch zum Lebenslauf) ─────────────────────────────────────────
+{\LARGE Erlind Sejdiu}\\[0.3em]
+{\small\color{muted}
+Blücherstraße 18, Karlsruhe \enspace\textbar\enspace
+0157\,3547\,4746 \enspace\textbar\enspace
+\href{mailto:erlindamprogrammieren@gmail.com}{erlindamprogrammieren@gmail.com}}\\[0.4em]
+\textcolor{hairline}{\rule{\linewidth}{0.7pt}}
+
+\vspace{0.9em}
+
+% ─── Betreffzeile ────────────────────────────────────────────────────────────
+{\large\textbf{Masterarbeit: Benchmark-Konzept \& Tooling für verteilte industrielle Netzwerke}}\\[0.15em]
+{\small\color{muted}ABB Forschungszentrum Deutschland \enspace\textbar\enspace Team: Secure Connected Systems \enspace\textbar\enspace Möglicher Beginn: nach Absprache}
+
+\vspace{0.4em}
+
+% ─── Anschreiben ─────────────────────────────────────────────────────────────
+Sehr geehrte Damen und Herren,% Falls Ansprechpartner bekannt (z. B. R&D Team Lead): Sehr geehrte(r) Frau/Herr <Name>,
+
+ich studiere Informatik im Master an der Hochschule Karlsruhe mit dem Schwerpunkt Software Engineering und suche eine Masterarbeit, in deren Mittelpunkt die Entwicklung eines Konzepts steht. Meine Stärken liegen sowohl im Software Engineering als auch in der künstlichen Intelligenz.
+
+Wie ich ein solches Konzept methodisch erarbeite, habe ich bereits in meiner Bachelorarbeit bei der ProSeS GmbH (Note 1,0) gezeigt. Dort habe ich ein Konzept zur Verbesserung der Wartbarkeit eines Benachrichtigungssystems entwickelt und umgesetzt. Grundlage für die Bewertung war die ISO/IEC 25010, deren Qualitätsmerkmale ich als messbare Kriterien herangezogen habe. Entsprechend habe ich auch Arbeitserfahrung in einem industriellen Kontext.
+
+Die von Ihnen ausgeschriebene Stelle würde auf meine Stärken passen, da ich mich zu mal stärker mit Software-Architekturen schon auseinander gesetzt habe und meine Stärken auch in der Erfassung von Anforderungen, entwicklung von Konzepten und implementierung von Proof of Concepts liegen. Genau diese stärken sind mir nützlich bei der Erstellung von Konzepten, die in der Masterarbeit nützlich wären.
+
+Gleichzeitig würde ich gerne noch auf meine Projekt-Management Applikation aufmerksam machen, welche eine MicroService Software-Architektur aufweißt. In diesem verteilten System erstelle ich mir Logs, Traces und Metriken mithilfe von Open-Telemetry und lasse mir diese mit Aspire anzeigen. Darunter kann das zeitliche Verhalten genauer betrachtet werden und das Systemverhalten genauer betrachtet werden.
+
+Statts eine Mauer voller Text zu präsentieren, würde ich mich über ein persönliches Gespräch freuen, in welchem ich \emph{möglicherweiser} Sie von mir überzeugen könnte.
+
+\vspace{0.5em}
+
+Mit freundlichen Grüßen
+
+\vspace{1.2em}
+
+Erlind Sejdiu
+
+\end{document}
+

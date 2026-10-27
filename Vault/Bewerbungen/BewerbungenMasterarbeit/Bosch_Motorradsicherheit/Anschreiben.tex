@@ -1,0 +1,76 @@
+% !TeX program = lualatex
+% Bewerbung Masterthesis Bosch (Zentrale Forschung, Motorradsicherheit) – Erlind Sejdiu
+% Kompilieren mit:  lualatex Anschreiben.tex
+% Layout bewusst abgestimmt auf den Lebenslauf (gleiche Typografie & Farbpalette).
+
+\documentclass[a4paper,11pt]{article}
+
+% ─── Pakete ──────────────────────────────────────────────────────────────────
+\usepackage{fontspec}
+\usepackage[ngerman]{babel}
+\usepackage[left=2.2cm, right=2.2cm, top=1.4cm, bottom=1.4cm]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+% ─── Schrift ─────────────────────────────────────────────────────────────────
+\setmainfont{texgyrepagella}[
+    Extension = .otf,
+    UprightFont = *-regular,
+    BoldFont = *-bold,
+    ItalicFont = *-italic,
+    BoldItalicFont = *-bolditalic
+]
+
+\definecolor{ink}{HTML}{1C1C1C}
+\definecolor{muted}{HTML}{6E6E6E}
+\definecolor{hairline}{HTML}{C4C4C4}
+\color{ink}
+
+\hypersetup{pdfauthor={Erlind Sejdiu},
+            pdftitle={Bewerbung Masterthesis Motorradsicherheit -- Erlind Sejdiu}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\pagestyle{empty}
+
+% =============================================================================
+\begin{document}
+
+% ─── Kopf (identisch zum Lebenslauf) ─────────────────────────────────────────
+{\LARGE Erlind Sejdiu}\\[0.3em]
+{\small\color{muted}
+Blücherstraße 18, Karlsruhe \enspace\textbar\enspace
+0157\,3547\,4746 \enspace\textbar\enspace
+\href{mailto:erlindamprogrammieren@gmail.com}{erlindamprogrammieren@gmail.com}}\\[0.4em]
+\textcolor{hairline}{\rule{\linewidth}{0.7pt}}
+
+\vspace{1.4em}
+
+% ─── Betreffzeile ────────────────────────────────────────────────────────────
+{\large\textbf{Bewerbung für eine Masterarbeit im Bereich Motorradsicherheit}}\\[0.15em]
+{\small\color{muted}Robert Bosch GmbH, Zentrale Forschung \enspace\textbar\enspace Möglicher Beginn: Sommersemester 2027 (oder nach Absprache)}
+
+\vspace{0.5em}
+
+% ─── Anschreiben ─────────────────────────────────────────────────────────────
+Sehr geehrte Damen und Herren,% Falls Ansprechpartner bekannt: Sehr geehrte(r) Frau/Herr <Name>,
+
+ich studiere Informatik im Master an der Hochschule Karlsruhe und suche eine Masterarbeit. Meine persönliche stärken ist Software-Engineering und als auch künstliche Intelligenz. Die Ausgeschriebene Stellenauschreibung passt zu meinen stärken. An dieser Stelle würde ich gerne auf mein Projekt der Aktienanalyse aufmerksam machen an dem ich privat die methodiken anwende die ich auch in meinen Vorlesungen kennenlerne. So habe ich ein Privates Netz trainiert, um vorherzusagen, ob ein bestimmte Aktien steigen oder auch sinken.
+
+Ein Grund weswegen ich mich auf diese Stellenauschreibung bewerbe ist, dass ich Module höre des Professors ~Dr.~Jannik Strötgen, der früher selbst in der Bosch-Forschung in Renningen gearbeitet hat. Dazu gehört auch Explainable AI, in der wir Methoden wie SHAP und LIME behandeln. Weswegen ich davon ausgehe, dass ich ein stabiles fundament besitze.
+
+In der Masterarbeit würde ich gern die Testfahrtdaten aufbereiten, Sequence-to-Sequence-Modelle zur Zustandsschätzung entwickeln und deren Ergebnisse mit XAI-Methoden nachvollziehbar machen.
+
+Statts eine Mauer voller Text zu präsentieren, würde ich mich über ein persönliches Gespräch freuen, in welchem ich \emph{möglicherweiser} Sie von mir überzeugen könnte.
+
+\vspace{0.6em}
+
+Mit freundlichen Grüßen
+
+\vspace{1.5em}
+
+Erlind Sejdiu
+
+\end{document}
