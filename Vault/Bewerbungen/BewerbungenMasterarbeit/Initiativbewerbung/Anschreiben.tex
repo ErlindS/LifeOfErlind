@@ -1,0 +1,80 @@
+% !TeX program = lualatex
+% Initiativbewerbung Masterthesis Informatik – Erlind Sejdiu
+% Kompilieren mit:  lualatex Anschreiben.tex
+
+\documentclass[a4paper,11pt]{article}
+
+% ─── Pakete ──────────────────────────────────────────────────────────────────
+\usepackage{fontspec}
+\usepackage[ngerman]{babel}
+\usepackage[left=2.2cm, right=2.2cm, top=1.4cm, bottom=1.4cm]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+% ─── Schrift ─────────────────────────────────────────────────────────────────
+\setmainfont{texgyrepagella}[
+    Extension = .otf,
+    UprightFont = *-regular,
+    BoldFont = *-bold,
+    ItalicFont = *-italic,
+    BoldItalicFont = *-bolditalic
+]
+
+\definecolor{ink}{HTML}{1C1C1C}
+\definecolor{muted}{HTML}{6E6E6E}
+\definecolor{hairline}{HTML}{C4C4C4}
+\color{ink}
+
+% ─── Pro Unternehmen anpassen ────────────────────────────────────────────────
+\newcommand{\firma}{[Unternehmen]}
+
+\hypersetup{pdfauthor={Erlind Sejdiu},
+            pdftitle={Initiativbewerbung Masterthesis Informatik -- Erlind Sejdiu}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\pagestyle{empty}
+
+% =============================================================================
+\begin{document}
+
+% ─── Kopf (identisch zum Lebenslauf) ─────────────────────────────────────────
+{\LARGE Erlind Sejdiu}\\[0.3em]
+{\small\color{muted}
+Blücherstraße 18, Karlsruhe \enspace\textbar\enspace
+0157\,3547\,4746 \enspace\textbar\enspace
+\href{mailto:erlindamprogrammieren@gmail.com}{erlindamprogrammieren@gmail.com}}\\[0.4em]
+\textcolor{hairline}{\rule{\linewidth}{0.7pt}}
+
+\vspace{0.9em}
+
+% ─── Betreffzeile ────────────────────────────────────────────────────────────
+{\large\textbf{Initiativbewerbung für eine Masterarbeit im Bereich Informatik}}\\[0.15em]
+{\small\color{muted}\firma \enspace\textbar\enspace Software Engineering \& Softwarequalität}
+
+\vspace{0.4em}
+
+% ─── Anschreiben ─────────────────────────────────────────────────────────────
+Sehr geehrte Damen und Herren,
+
+ich studiere Informatik im Master an der Hochschule Karlsruhe mit dem Schwerpunkt Software Engineering und suche eine Masterarbeit, in deren Mittelpunkt die Entwicklung eines Konzepts steht. Da ich bei \firma{} keine passende Ausschreibung gefunden habe, wende ich mich initiativ an Sie und möchte Ihnen vorschlagen, wie eine solche Arbeit aussehen könnte.
+
+Ich könnte mir gut vorstellen, meine Masterarbeit an einem konkreten Vorhaben aus Ihrem Haus zu schreiben. Dabei würde ich gezielt ein Qualitätsmerkmal der ISO/IEC 25010, etwa Wartbarkeit, Zuverlässigkeit, Leistungseffizienz oder Sicherheit, herausgreifen und in der Tiefe untersuchen. Dazu würde ich den aktuellen Stand analysieren, das Merkmal in messbare Kriterien übersetzen, daraus ein Konzept ableiten und mit einem Proof of Concept zeigen, wie sich genau dieser Aspekt umsetzen lässt. So entsteht neben der wissenschaftlichen Arbeit ein Ergebnis, das Sie direkt weiterverwenden können.
+
+Wie ich dabei methodisch vorgehe, habe ich in meiner Bachelorarbeit bei der ProSeS GmbH gezeigt. Dort habe ich die Wartbarkeit eines Benachrichtigungssystems anhand messbarer Kriterien nach ISO/IEC 25010 bewertet und mit einem eigenen Konzept verbessert.
+
+Außerdem entwickle ich privat eine Anwendung für Projektmanagement aus mehreren Microservices, deren Zusammenspiel ich mit OpenTelemetry und .NET Aspire nachvollziehe. Wie fein das Logging in solchen verteilten Systemen sein sollte, untersuche ich zudem in meiner aktuellen Projektarbeit.
+
+Da ein Anschreiben nur einen ersten Eindruck vermitteln kann, stelle ich mich und meine Arbeitsweise gerne persönlich bei Ihnen vor. Über eine Einladung zum Gespräch freue ich mich.
+
+\vspace{0.5em}
+
+Mit freundlichen Grüßen
+
+\vspace{1.2em}
+
+Erlind Sejdiu
+
+\end{document}

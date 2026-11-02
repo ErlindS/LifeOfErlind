@@ -1,0 +1,82 @@
+% !TeX program = lualatex
+% Initiativbewerbung Masterthesis ZEAG Energie AG (ZEAG IT) – Erlind Sejdiu
+% Anlass: Stellenanzeige Solution Architect, Job-ID 25818
+% Kompilieren mit:  lualatex Anschreiben.tex
+
+\documentclass[a4paper,11pt]{article}
+
+% ─── Pakete ──────────────────────────────────────────────────────────────────
+\usepackage{fontspec}
+\usepackage[ngerman]{babel}
+\usepackage[left=2.2cm, right=2.2cm, top=1.4cm, bottom=1.4cm]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+% ─── Schrift ─────────────────────────────────────────────────────────────────
+\setmainfont{texgyrepagella}[
+    Extension = .otf,
+    UprightFont = *-regular,
+    BoldFont = *-bold,
+    ItalicFont = *-italic,
+    BoldItalicFont = *-bolditalic
+]
+
+\newfontfamily\signaturefont{HerrVonMuellerhoff-Regular.ttf}[Path = ../fonts/]
+
+\definecolor{ink}{HTML}{1C1C1C}
+\definecolor{muted}{HTML}{6E6E6E}
+\definecolor{hairline}{HTML}{C4C4C4}
+\definecolor{signink}{HTML}{1F2F5C}
+\color{ink}
+
+% ─── Pro Unternehmen anpassen ────────────────────────────────────────────────
+\newcommand{\firma}{ZEAG Energie AG}
+
+\hypersetup{pdfauthor={Erlind Sejdiu},
+            pdftitle={Initiativbewerbung Masterthesis Informatik -- Erlind Sejdiu}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\pagestyle{empty}
+
+% =============================================================================
+\begin{document}
+
+% ─── Kopf (identisch zum Lebenslauf) ─────────────────────────────────────────
+{\LARGE Erlind Sejdiu}\\[0.3em]
+{\small\color{muted}
+Blücherstraße 18, Karlsruhe \enspace\textbar\enspace
+0157\,3547\,4746 \enspace\textbar\enspace
+\href{mailto:erlindamprogrammieren@gmail.com}{erlindamprogrammieren@gmail.com}}\\[0.4em]
+\textcolor{hairline}{\rule{\linewidth}{0.7pt}}
+
+\vspace{0.9em}
+
+% ─── Betreffzeile ────────────────────────────────────────────────────────────
+{\large\textbf{Initiativbewerbung für eine Masterarbeit im Bereich Informatik}}\\[0.15em]
+{\small\color{muted}\firma \enspace\textbar\enspace ZEAG IT \enspace\textbar\enspace Softwarearchitektur \& Softwarequalität}
+
+\vspace{0.4em}
+
+% ─── Anschreiben ─────────────────────────────────────────────────────────────
+Sehr geehrte Damen und Herren,
+
+ich studiere Informatik im Master an der Hochschule Karlsruhe mit dem Schwerpunkt Software Engineering und suche eine Masterarbeit, in deren Mittelpunkt die Entwicklung eines Konzepts steht. Bei der Suche bin ich auf Ihre Ausschreibung als Solution Architect in der ZEAG IT gestoßen. Eine gewachsene Systemlandschaft zu überblicken, Lösungsarchitekturen nachvollziehbar zu machen und Ideen schnell als Proof of Concept greifbar zu machen, entspricht genau dem, was mich an der Informatik reizt. Deshalb frage ich initiativ an, ob ich meine Masterarbeit bei Ihnen schreiben kann.
+
+Ich könnte mir gut vorstellen, die Arbeit an einem konkreten Vorhaben aus Ihrer Systemlandschaft auszurichten. Dabei würde ich gezielt ein Qualitätsmerkmal der ISO/IEC 25010 herausgreifen, zum Beispiel die Interoperabilität der Schnittstellen zwischen SAP, GIS und Fachanwendungen oder die Sicherheit einer Lösung im Hinblick auf Ihre Freigabeprozesse. Um dieses Merkmal gründlich zu untersuchen, würde ich den aktuellen Stand analysieren, das Merkmal in messbare Kriterien übersetzen, daraus ein Architekturkonzept ableiten und mit einem Proof of Concept zeigen, wie es sich konkret umsetzen lässt. So entsteht neben der wissenschaftlichen Arbeit ein Ergebnis, das Sie direkt weiterverwenden können.
+
+Wie ich dabei methodisch vorgehe, habe ich bereits in meiner Bachelorarbeit bei der ProSeS GmbH gezeigt, in der ich die Wartbarkeit eines Benachrichtigungssystems anhand messbarer Kriterien nach ISO/IEC 25010 bewertet und mit einem eigenen Konzept verbessert habe. Dass mich solche Fragen auch über das Studium hinaus beschäftigen, zeigt meine private Anwendung für Projektmanagement. Sie besteht aus mehreren Microservices, deren Zusammenspiel ich mit OpenTelemetry und .NET Aspire nachvollziehe.
+
+Da ein Anschreiben nur einen ersten Eindruck vermitteln kann, stelle ich mich und meine Arbeitsweise gerne persönlich bei Ihnen vor. Über eine Einladung zum Gespräch freue ich mich.
+
+\vspace{0.5em}
+
+Mit freundlichen Grüßen
+
+
+{\signaturefont\fontsize{34}{30}\selectfont\color{signink}Erlind Sejdiu}\\[0.1em]
+Erlind Sejdiu
+
+\end{document}
