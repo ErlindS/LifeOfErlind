@@ -12,6 +12,7 @@
 \usepackage{microtype}
 \usepackage{enumitem}
 \usepackage{xcolor}
+\usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
 
 % ─── Schrift ─────────────────────────────────────────────────────────────────
@@ -23,12 +24,9 @@
     BoldItalicFont = *-bolditalic
 ]
 
-\newfontfamily\signaturefont{HerrVonMuellerhoff-Regular.ttf}[Path = ../fonts/]
-
 \definecolor{ink}{HTML}{1C1C1C}
 \definecolor{muted}{HTML}{6E6E6E}
 \definecolor{hairline}{HTML}{C4C4C4}
-\definecolor{signink}{HTML}{1F2F5C}
 \color{ink}
 
 % ─── Pro Unternehmen anpassen ────────────────────────────────────────────────
@@ -75,8 +73,7 @@ Da ein Anschreiben nur einen ersten Eindruck vermitteln kann, stelle ich mich un
 
 Mit freundlichen Grüßen
 
-
-{\signaturefont\fontsize{34}{30}\selectfont\color{signink}Erlind Sejdiu}\\[0.1em]
+\includegraphics[height=1.3cm, trim=50 15 400 10, clip]{../signature.png}\\[-0.2em]
 Erlind Sejdiu
 
 \end{document}
